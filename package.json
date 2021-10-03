@@ -2,7 +2,7 @@
   "name": "RCC-BOT",
   "version": "1.0.0",
   "description": "RAFLI CELL COM",
-  "main": "dha.js",
+  "main": "main.js",
   "directories": {
     "lib": "lib"
   },
