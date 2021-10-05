@@ -2208,7 +2208,7 @@ case 'tiktok':
               if (args.length == 0) return reply(`Kirim perintah *${prefix}nhentai [ code ]*\nContoh : ${prefix}nhentai 230505`)
               query = args.join(" ")
               reply(mess.wait)
-              henid = args [0]
+              henid = args[0]
               get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentai/${henid}?apikey=${setting.lolkey}`)
               get_result = get_result.result
               get_info = get_result.info
