@@ -2190,7 +2190,6 @@ case 'tiktok':
              henid = args[0]
              get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentai/${henid}?apikey=${setting.lolkey}`)
              get_result = get_result.result
-             get_info = get_result.info
              teks = `\n${get_result.title_romaji}\n\n${get_result.title_native}\n\nCharacter : ${get_result.characters.join(", ")}\n`
              ini_image = await getBuffer(get_result.image[0])
              dha.sendMessage(from, ini_image, image, { caption: teks, quoted: mek })
@@ -2212,7 +2211,6 @@ case 'tiktok':
               ini_txt = `Title Romaji : ${get_result.title_romaji}\n`
               ini_txt += `Title Native : ${get_result.title_native}\n`
               ini_txt += `Read Online : ${get_result.read}\n`
-              get_info = get_result.info
               ini_txt += `Parodies : ${get_result.parodies}\n`
               ini_txt += `Character : ${get_result.characters.join(", ")}\n`
               ini_txt += `Tags : ${get_result.tags.join(", ")}\n`
