@@ -2190,7 +2190,7 @@ case 'tiktok':
              henid = args[0]
              get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentai/${henid}?apikey=${setting.lolkey}`)
              get_result = get_result.result
-             teks = `\n${get_result.title_romaji}\n\n${get_result.title_native}\n\nCharacter : ${get_result.characters.join(", ")}\n`
+             teks = `\n${get_result.title_romaji}\n\n${get_result.title_native}\n\nCharacter : ${get_result.characters(", ")}\n`
              ini_image = await getBuffer(get_result.image[0])
              dha.sendMessage(from, ini_image, image, { caption: teks, quoted: mek })
              anu = await fetchJson(`https://api.lolhuman.xyz/api/nhentaipdf/${henid}?apikey=${setting.lolkey}`)
@@ -2212,11 +2212,11 @@ case 'tiktok':
               ini_txt += `Title Native : ${get_result.title_native}\n`
               ini_txt += `Read Online : ${get_result.read}\n`
               ini_txt += `Parodies : ${get_result.parodies}\n`
-              ini_txt += `Character : ${get_result.characters.join(", ")}\n`
+              ini_txt += `Character : ${get_result.characters(", ")}\n`
               ini_txt += `Tags : ${get_result.tags.join(", ")}\n`
               ini_txt += `Artist : ${get_result.artists}\n`
               ini_txt += `Group : ${get_result.groups}\n`
-              ini_txt += `Languager : ${get_result.languages.join(", ")}\n`
+              ini_txt += `Languager : ${get_result.languages(", ")}\n`
               ini_txt += `Categories : ${get_result.categories}\n`
               ini_txt += `Pages : ${get_result.pages}\n`
               ini_txt += `Uploaded : ${get_result.uploaded}\n`
