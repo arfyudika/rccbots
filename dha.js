@@ -2180,7 +2180,7 @@ case 'tiktok':
              if (args.length == 0) return reply(`Example: ${prefix + command} https://nekopoi.care/`)
              ini_link = args[0]
              ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/ssweb?apikey=${setting.lolkey}&url=${ini_link}`)
-             await ikyy.sendMessage(from, ini_buffer, image, { quoted: mek })
+             await dha.sendMessage(from, ini_buffer, image, { quoted: mek })
              break
        case 'nhentaipdf':
              if (!isPremium) return reply(mess.only.premium)
@@ -2193,10 +2193,10 @@ case 'tiktok':
              get_info = get_result.info
              teks = `\n${get_result.title_romaji}\n\n${get_result.title_native}\n\nCharacter : ${get_info.characters.join(", ")}\n`
              ini_image = await getBuffer(get_result.image[0])
-             ikyy.sendMessage(from, ini_image, image, { caption: teks, quoted: mek })
+             dha.sendMessage(from, ini_image, image, { caption: teks, quoted: mek })
              anu = await fetchJson(`https://api.lolhuman.xyz/api/nhentaipdf/${henid}?apikey=${setting.lolkey}`)
              pdf = await getBuffer(anu.result)
-             ikyy.sendMessage(from, pdf, document, { quoted: mek, mimetype: Mimetype.pdf, filename: `${get_result.title_romaji}.pdf`, thumbnail: ini_image })
+             dha.sendMessage(from, pdf, document, { quoted: mek, mimetype: Mimetype.pdf, filename: `${get_result.title_romaji}.pdf`, thumbnail: ini_image })
              } catch (e) {
              console.log(e)
              reply(String(e))
@@ -2252,7 +2252,7 @@ case 'tiktok':
 }
               ini_txt += `\nDescription : ${get_result.description}`
               thumbnail = await getBuffer(get_result.coverImage.large)
-              await ikyy.sendMessage(from, thumbnail, image, { quoted: mek, caption: ini_txt })
+              await dha.sendMessage(from, thumbnail, image, { quoted: mek, caption: ini_txt })
               break
        case 'doujindesu':
              if (!q) return reply(mess.wrongFormat)
@@ -2265,7 +2265,7 @@ case 'tiktok':
              xixixai += `\n*Urutan ${i+1}*\n*Title:* ${data[i].title}\n*Type:* ${data[i].type}\n*Status:* ${data[i].status}\n*Rating:* ${data[i].rating}\n*Followers:* ${data[i].followers}\n`
 }
              buffer = await getBuffer(data[0].thumb)
-             ikyy.sendMessage(from, buffer, image, {caption: xixixai, quoted: mek})
+             dha.sendMessage(from, buffer, image, {caption: xixixai, quoted: mek})
              } catch (e) {
              console.log(e)
              reply(String(e))
@@ -2301,7 +2301,7 @@ case 'tiktok':
  }
              ini_txt += `\nDescription : ${get_result.description}`
              thumbnail = await getBuffer(get_result.coverImage.large)
-             await ikyy.sendMessage(from, thumbnail, image, { quoted: mek, caption: ini_txt })
+             await dha.sendMessage(from, thumbnail, image, { quoted: mek, caption: ini_txt })
              break
       case 'kusonime':
              if (args.length == 0) return reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
@@ -2329,7 +2329,7 @@ case 'tiktok':
 }
 }
              ini_buffer = await getBuffer(get_result.thumbnail)
-             await ikyy.sendMessage(from, ini_buffer, image, { quoted: mek, caption: ini_txt })
+             await dha.sendMessage(from, ini_buffer, image, { quoted: mek, caption: ini_txt })
              break
        case 'otakudesu':
               if (args.length == 0) return reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
@@ -2384,7 +2384,7 @@ case 'tiktok':
 }
 }
               ini_buffer = await getBuffer(get_result.thumb)
-              await ikyy.sendMessage(from, ini_buffer, image, { quoted: mek, caption: ini_txt })
+              await dha.sendMessage(from, ini_buffer, image, { quoted: mek, caption: ini_txt })
               break
        case 'nekopoisearch':
               if (args.length == 0) return reply(`Example: ${prefix + command} Isekai Harem`)
