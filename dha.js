@@ -2229,13 +2229,10 @@ teks = `\`\`\`▢ Title Romaji : ${get_result[i].title_romaji}\`\`\`
 \`\`\`▢ Categories : ${get_info[i].categories}\`\`\`
 \`\`\`▢ Pages : ${get_info[i].pages}\`\`\`
 \`\`\`▢ Uploaded : ${get_info[i].uploaded}\`\`\`
-
 `
 }
               ini_buffer = await getBuffer(get_result[0].thumb)
               dha.sendMessage(from, ini_buffer, image, { quoted: mek, caption: teks })
-              } catch {
-              reply(`Maaf code ${henid} tidak ditemukan`)
 }
               break
        case 'manga':
