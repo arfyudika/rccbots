@@ -1116,7 +1116,7 @@ dha.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
                nombor = 1
                startnum = 0
                for (let x of listmenu) {
-               const yy = {title: 'Pilih menu' + nombor++,
+               const yy = {title: 'Sub-Menu ' + nombor++,
                     rows: [
                        {
                         title: `${listmenuu[startnum++]}`,
