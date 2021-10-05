@@ -2190,7 +2190,8 @@ case 'tiktok':
              henid = args[0]
              get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentai/${henid}?apikey=${setting.lolkey}`)
              get_result = get_result.result
-             teks = `\n${get_result.title_romaji}\n\n${get_result.title_native}\n\nCharacter : ${get_result.characters(", ")}\n`
+             get_info = result_info
+             teks = `\n${get_result.title_romaji}\n\n${get_result.title_native}\n\nCharacter : ${get_info.characters.join(", ")}\n`
              ini_image = await getBuffer(get_result.image[0])
              dha.sendMessage(from, ini_image, image, { caption: teks, quoted: mek })
              anu = await fetchJson(`https://api.lolhuman.xyz/api/nhentaipdf/${henid}?apikey=${setting.lolkey}`)
@@ -2212,15 +2213,17 @@ case 'tiktok':
               ini_txt += `Title Native : ${get_result.title_native}\n`
               ini_txt += `Read Online : ${get_result.read}\n`
               ini_txt += `Parodies : ${get_result.parodies}\n`
-              ini_txt += `Character : ${get_result.characters(", ")}\n`
-              ini_txt += `Tags : ${get_result.tags.join(", ")}\n`
-              ini_txt += `Artist : ${get_result.artists}\n`
-              ini_txt += `Group : ${get_result.groups}\n`
-              ini_txt += `Languager : ${get_result.languages(", ")}\n`
-              ini_txt += `Categories : ${get_result.categories}\n`
-              ini_txt += `Pages : ${get_result.pages}\n`
-              ini_txt += `Uploaded : ${get_result.uploaded}\n`
-              reply(ini_txt)
+              get_info = result_info
+              ini_txt += `Character : ${get_info.characters.join(", ")}\n`
+              ini_txt += `Tags : ${get_info.tags.join(", ")}\n`
+              ini_txt += `Artist : ${get_info.artists}\n`
+              ini_txt += `Group : ${get_info.groups}\n`
+              ini_txt += `Languager : ${get_info.languages(", ")}\n`
+              ini_txt += `Categories : ${get_info.categories}\n`
+              ini_txt += `Pages : ${get_info.pages}\n`
+              ini_txt += `Uploaded : ${get_info.uploaded}\n`
+              buffer = await getBuffer(data[0].thumb)
+              await dha.sendMessage(from, thumbnail, image, { quoted: mek, caption: ini_txt })
               break
        case 'manga':
               if (args.length == 0) return reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
