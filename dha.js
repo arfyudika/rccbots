@@ -2203,26 +2203,41 @@ case 'tiktok':
 }
              break
        case 'nhentai':
+              try {
               if (!isPremium) return reply(mess.only.premium)
-              if (args.length == 0) return reply(`Example: ${prefix + command} 344253`)
+              if (args.length == 0) return reply(`Kirim perintah *${prefix}nhentai [ code ]*\nContoh : ${prefix}nhentai 230505`)
+              query = args.join(" ")
               reply(mess.wait)
-              henid = args[0]
+              henid = args [0]
               get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentai/${henid}?apikey=${setting.lolkey}`)
               get_result = get_result.result
-              ini_txt = `Title Romaji : ${get_result.title_romaji}\n`
-              ini_txt += `Title Native : ${get_result.title_native}\n`
-              ini_txt += `Read Online : ${get_result.read}\n`
               get_info = get_result.info
-              ini_txt += `Parodies : ${get_info.parodies}\n`
-              ini_txt += `Character : ${get_info.characters.join(", ")}\n`
-              ini_txt += `Tags : ${get_info.tags.join(", ")}\n`
-              ini_txt += `Artist : ${get_info.artists}\n`
-              ini_txt += `Group : ${get_info.groups}\n`
-              ini_txt += `Languager : ${get_info.languages.join(", ")}\n`
-              ini_txt += `Categories : ${get_info.categories}\n`
-              ini_txt += `Pages : ${get_info.pages}\n`
-              ini_txt += `Uploaded : ${get_info.uploaded}\n`
-              reply(ini_txt)
+              teks = `┏┉⌣ ┈̥-̶̯͡..̷̴✽̶┄┈┈┈┈┈┈┈┈┈┈┉┓
+┆ *NHENTAI*
+└┈┈┈┈┈┈┈┈┈┈┈⌣ ┈̥-̶̯͡..̷̴✽̶⌣ ✽̶
+
+*Data Berhasil Didapatkan!*\n`
+for(let i = 0; i < get_result.length; i++) {
+teks = `\`\`\`▢ Title Romaji : ${get_result[i].title_romaji}\`\`\`
+\`\`\`▢ Title Native : ${get_result[i].title_native}\`\`\`
+\`\`\`▢ Read Online : ${get_result[i].read}\`\`\`
+\`\`\`▢ Parodies : ${get_info[i].parodies}\`\`\`
+\`\`\`▢ Character : ${get_info[i].characters.join(", ")}\`\`\`
+\`\`\`▢ Tags : ${get_info[i].tags.join(", ")}\`\`\`
+\`\`\`▢ Artist : ${get_info[i].artist}\`\`\`
+\`\`\`▢ Group : ${get_info[i].groups}\`\`\`
+\`\`\`▢ Language : ${get_info[i].languages.join(", ")}\`\`\`
+\`\`\`▢ Categories : ${get_info[i].categories}\`\`\`
+\`\`\`▢ Pages : ${get_info[i].pages}\`\`\`
+\`\`\`▢ Uploaded : ${get_info[i].uploaded}\`\`\`
+
+`
+}
+              ini_buffer = await getBuffer(get_result[0].thumb)
+              dha.sendMessage(from, ini_buffer, image, { quoted: mek, caption: teks })
+              } catch {
+              reply(`Maaf code ${henid} tidak ditemukan`)
+}
               break
        case 'manga':
               if (args.length == 0) return reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
