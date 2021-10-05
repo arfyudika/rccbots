@@ -2435,7 +2435,7 @@ break
               anu = await fetchJson(`https://api.lolhuman.xyz/api/storynime?apikey=${setting.lolkey}`)
               buffer = await getBuffer(anu.result)
               dha.sendMessage(from, buffer, video, { quoted: mek })
-}
+              break
        case 'nekopoi3d':
        case '3dnekopoi':
        case '3dnekopoilast':
