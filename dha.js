@@ -2233,7 +2233,6 @@ teks = `\`\`\`▢ Title Romaji : ${get_result[i].title_romaji}\`\`\`
 }
               ini_buffer = await getBuffer(get_result[0].thumb)
               dha.sendMessage(from, ini_buffer, image, { quoted: mek, caption: teks })
-}
               break
        case 'manga':
               if (args.length == 0) return reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
