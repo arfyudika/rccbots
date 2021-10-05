@@ -2402,41 +2402,41 @@ case 'tiktok':
        case 'neko':
               getBuffer(`https://api.lolhuman.xyz/api/random/neko?apikey=${setting.lolkey}`).then((gambar) => {
               dha.sendMessage(from, gambar, image, { quoted: mek })
-              break
 }) 
+break
        case 'kanna':
               getBuffer(`https://api.lolhuman.xyz/api/random/kanna?apikey=${setting.lolkey}`).then((gambar) => {
               dha.sendMessage(from, gambar, image, { quoted: mek })
-              break
-}) 
+})
+break
        case 'sagiri':
               getBuffer(`https://api.lolhuman.xyz/api/random/sagiri?apikey=${setting.lolkey}`).then((gambar) => {
               dha.sendMessage(from, gambar, image, { quoted: mek })
-              break
-}) 
+})
+break
        case 'megumin':
               getBuffer(`https://api.lolhuman.xyz/api/random/megumin?apikey=${setting.lolkey}`).then((gambar) => {
               dha.sendMessage(from, gambar, image, { quoted: mek })
-              break
-}) 
+})
+break
        case 'wallnime':
               reply(mess.wait)
               getBuffer(`https://api.lolhuman.xyz/api/random/${command}?apikey=${setting.lolkey}`).then((gambar) => {
               dha.sendMessage(from, gambar, image, { quoted: mek, thumbnail: Buffer.alloc(0) })
-              break
-})       
+})
+break    
        case 'hentai':
               getBuffer(`https://api.lolhuman.xyz/api/random/nsfw/hentai?apikey=${setting.lolkey}`).then((gambar) => {
               dha.sendMessage(from, gambar, image, { quoted: mek })
-              break
-}) 
+})
+break
        case 'storyanime':
               reply(mess.wait)
               anu = await fetchJson(`https://api.lolhuman.xyz/api/storynime?apikey=${setting.lolkey}`)
               buffer = await getBuffer(anu.result)
               dha.sendMessage(from, buffer, video, { quoted: mek })
-              break
 })
+break
        case 'nekopoi3d':
        case '3dnekopoi':
        case '3dnekopoilast':
