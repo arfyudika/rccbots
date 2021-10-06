@@ -2212,17 +2212,17 @@ break
               ini_txt = `Title Romaji : ${get_result.title_romaji}\n`
               ini_txt += `Title Native : ${get_result.title_native}\n`
               ini_txt += `Read Online : ${get_result.read}\n`
-              ini_txt += `Parodies : ${get_result.parodies}\n`
-              ini_txt += `Character : ${get_result.characters.join(", ")}\n`
-              ini_txt += `Tags : ${get_result.tags.join(", ")}\n`
-              ini_txt += `Artist : ${get_result.artists}\n`
-              ini_txt += `Group : ${get_result.groups}\n`
-              ini_txt += `Languager : ${get_result.languages(", ")}\n`
-              ini_txt += `Categories : ${get_result.categories}\n`
-              ini_txt += `Pages : ${get_result.pages}\n`
-              ini_txt += `Uploaded : ${get_result.uploaded}\n`
-              buffer = await getBuffer(data[0].thumb)
-              await dha.sendMessage(from, thumbnail, image, { quoted: mek, caption: ini_txt })
+              get_info = get_result.info
+              ini_txt += `Parodies : ${get_info.parodies}\n`
+              ini_txt += `Character : ${get_info.characters.join(", ")}\n`
+              ini_txt += `Tags : ${get_info.tags.join(", ")}\n`
+              ini_txt += `Artist : ${get_info.artists}\n`
+              ini_txt += `Group : ${get_info.groups}\n`
+              ini_txt += `Languager : ${get_info.languages.join(", ")}\n`
+              ini_txt += `Categories : ${get_info.categories}\n`
+              ini_txt += `Pages : ${get_info.pages}\n`
+              ini_txt += `Uploaded : ${get_info.uploaded}\n`
+              reply(ini_txt)
               break
        case 'manga':
               if (args.length == 0) return reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
