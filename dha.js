@@ -1038,9 +1038,14 @@ dha.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 𝖮𝖳𝖧𝖤𝖱 𝖬𝖤𝖭𝖴 
 *▢ ${prefix}tourl*
 *▢ ${prefix}tinyurl*
-*▢ ${prefix}bilamgangka*
+*▢ ${prefix}bilangangka*
 *▢ ${prefix}artimimpi*
 *▢ ${prefix}resepmasakan*
+
+RCC MENU
+*▢ rapli*
+*▢ assalamualaikum*
+*▢ akuganteng*
 
 𝖮𝖶𝖭𝖤𝖱 𝖬𝖤𝖭𝖴 
 *▢️ ${prefix}bc* _teks_
@@ -2714,6 +2719,24 @@ a = `\`\`\`▢ Title : ${i.title}\`\`\`
                reply(`${e}`)
 }
                break
+       case 'akuganteng':
+              const gtg =['https://rccbot.000webhostapp.com/suaracewek/IyaSayang.ogg','https://rccbot.000webhostapp.com/suaracewek/mungkin.mp3','https://rccbot.000webhostapp.com/suaracewek/ngga.mp3']
+              const gtg3 = gtg[Math.floor(Math.random() * gtg.length)]
+              gtg2 = await getBuffer(gtg3)
+              dha.sendMessage(from, gtg2, audio,{mimetype: 'audio/mp4', ptt:true, quoted: mek})
+              break
+       case 'rapli':
+              const rcc =['https://rccbot.000webhostapp.com/suaracewek/IyaAdaYangBisaBotBantu.ogg','https://rccbot.000webhostapp.com/suaracewek/IyaAdaYangBisaBotBantu2.ogg','https://rccbot.000webhostapp.com/suaracewek/ApaSayang.ogg','https://rccbot.000webhostapp.com/suaracewek/iya.mp3']
+              const rcc3 = rcc[Math.floor(Math.random() * rcc.length)]
+              rcc2 = await getBuffer(rcc3)
+              dha.sendMessage(from, rcc2, audio,{mimetype: 'audio/mp4', ptt:true, quoted: mek})
+              break
+       case 'assalamualaikum':
+              const ass =['https://rccbot.000webhostapp.com/suaracewek/WaalaikumsalamSayang.ogg','https://rccbot.000webhostapp.com/suaracewek/Waalaikumsalam.ogg']
+              const ass3 = rcc[Math.floor(Math.random() * ass.length)]
+              ass2 = await getBuffer(ass3)
+              dha.sendMessage(from, ass2, audio,{mimetype: 'audio/mp4', ptt:true, quoted: mek})
+              break
        case 'tourl':
                if ((isMedia && !mek.message.videoMessage || isQuotedImage || isQuotedVideo ) && args.length == 0) {
                reply(mess.wait)
