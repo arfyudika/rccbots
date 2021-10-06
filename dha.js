@@ -2203,7 +2203,6 @@ case 'tiktok':
              if (err.message) return reply('error') 
              }
 }
-             break
        case 'nhentai':
               if (!isPremium) return reply(mess.only.premium)
               if (args.length == 0) return reply(`Example: ${prefix + command} 344253`)
