@@ -3823,13 +3823,12 @@ case 'getvn':
 }
              break
       case 'clearall':
-             if (!isOwner) return  reply(mess.only.owner)
-             anu = await dha.chats.all()
-             dha.setMaxListeners(25)
-             for (let _ of anu) {
-             dha.deleteChat(_.jid)
-}
-             reply('Sukses delete all chat :)')
+             if (!isOwner) return reply(mess.only.owner)
+             list_chat = await dha.chats.all()
+             for (let chat of list_chat) {
+             dha.modifyChat(chat.jid, "delete")
+             }
+             reply("success clear all chat")
              break
       case 'term':
              if (!isOwner) return
