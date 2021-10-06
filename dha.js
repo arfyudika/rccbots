@@ -2193,7 +2193,7 @@ case 'tiktok':
              if (!isPremium) return reply(mess.only.premium)
              if (args.length == 0) return reply(`Usage: ${prefix + command} query\nExample: ${prefix + command} 317986`)
              try {
-             reply(wait)
+             reply(mess.wait)
              henid = args[0]
              get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentaipdf/${q}?apikey=${apikey}`)
              get_result = get_result.result
@@ -2201,8 +2201,8 @@ case 'tiktok':
              await dha.sendMessage(from, ini_buffer, document, { quoted: mek, mimetype: Mimetype.pdf, filename: `${henid}.pdf` })
              } catch(err) {
              if (err.message) return reply('error') 
-             }
 }
+break
        case 'nhentai':
               if (!isPremium) return reply(mess.only.premium)
               if (args.length == 0) return reply(`Example: ${prefix + command} 344253`)
