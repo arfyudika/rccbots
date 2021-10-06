@@ -1042,10 +1042,11 @@ dha.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 *▢ ${prefix}artimimpi*
 *▢ ${prefix}resepmasakan*
 
-RCC MENU
+BOT MENU
 *▢ ${prefix}rapli*
 *▢ ${prefix}assalamualaikum*
 *▢ ${prefix}akuganteng*
+*▢ ${prefix}amv*
 
 𝖮𝖶𝖭𝖤𝖱 𝖬𝖤𝖭𝖴 
 *▢️ ${prefix}bc* _teks_
@@ -2736,6 +2737,19 @@ a = `\`\`\`▢ Title : ${i.title}\`\`\`
               const ass3 = ass[Math.floor(Math.random() * ass.length)]
               ass2 = await getBuffer(ass3)
               dha.sendMessage(from, ass2, audio,{mimetype: 'audio/mp4', ptt:true, quoted: mek})
+              break
+       case 'amv':
+              reply(mess.wait)
+              amv = await fetchText('https://raw.githubusercontent.com/Rafli2305/rccbots/master/amv.txt')
+              .then(async (body) => {
+              amv = body.split('\n')
+              amv = anu[Math.floor(Math.random() * amv.length)]
+              sendMediaURL(from, amv)
+})
+             .catch(async (err) => {
+              console.error(err)
+              reply(`${err}`)
+})
               break
        case 'tourl':
                if ((isMedia && !mek.message.videoMessage || isQuotedImage || isQuotedVideo ) && args.length == 0) {
