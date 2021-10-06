@@ -2189,7 +2189,7 @@ case 'tiktok':
              ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/ssweb?apikey=${setting.lolkey}&url=${ini_link}`)
              await dha.sendMessage(from, ini_buffer, image, { quoted: mek })
              break
-       case 'nhentaipdf': (args,q,dha,from,document,Mimetype) {
+       case 'nhentaipdf': (args,q,dha,from,document,Mimetype)
              if (!isPremium) return reply(mess.only.premium)
              if (args.length == 0) return reply(`Usage: ${prefix + command} query\nExample: ${prefix + command} 317986`)
              try {
