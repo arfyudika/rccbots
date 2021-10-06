@@ -1043,9 +1043,9 @@ dha.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 *▢ ${prefix}resepmasakan*
 
 RCC MENU
-*▢ rapli*
-*▢ assalamualaikum*
-*▢ akuganteng*
+*▢ ${prefix}rapli*
+*▢ ${prefix}assalamualaikum*
+*▢ ${prefix}akuganteng*
 
 𝖮𝖶𝖭𝖤𝖱 𝖬𝖤𝖭𝖴 
 *▢️ ${prefix}bc* _teks_
