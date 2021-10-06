@@ -2743,7 +2743,7 @@ a = `\`\`\`▢ Title : ${i.title}\`\`\`
               amv = await fetchText('https://raw.githubusercontent.com/Rafli2305/rccbots/master/amv.txt')
               .then(async (body) => {
               amv = body.split('\n')
-              amv = anu[Math.floor(Math.random() * amv.length)]
+              amv = amv[Math.floor(Math.random() * amv.length)]
               sendMediaURL(from, amv)
 })
              .catch(async (err) => {
