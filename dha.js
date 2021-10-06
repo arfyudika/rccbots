@@ -2189,13 +2189,13 @@ case 'tiktok':
              ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/ssweb?apikey=${setting.lolkey}&url=${ini_link}`)
              await dha.sendMessage(from, ini_buffer, image, { quoted: mek })
              break
-       case 'nhentaipdf': (args,q,dha,from,document,Mimetype)
+       case 'nhentaipdf':
              if (!isPremium) return reply(mess.only.premium)
              if (args.length == 0) return reply(`Usage: ${prefix + command} query\nExample: ${prefix + command} 317986`)
              try {
              reply(mess.wait)
              henid = args[0]
-             get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentaipdf/${q}?apikey=${apikey}`)
+             get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentaipdf/${henid}?apikey=${apikey}`)
              get_result = get_result.result
              ini_buffer = await getBuffer(get_result)
              await dha.sendMessage(from, ini_buffer, document, { quoted: mek, mimetype: Mimetype.pdf, filename: `${henid}.pdf` })
