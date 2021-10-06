@@ -2194,19 +2194,14 @@ case 'tiktok':
              if (args.length == 0) return reply(`Usage: ${prefix + command} query\nExample: ${prefix + command} 317986`)
              if (isNaN(Number(args[0]))) return await reply(mess.wrongFormat)
              try {
+             reply(wait)
              henid = args[0]
-             get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentai/${henid}?apikey=${setting.lolkey}`)
+             get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentaipdf/${q}?apikey=${apikey}`)
              get_result = get_result.result
-             get_info = result_info
-             teks = `\n${get_result.title_romaji}\n\n${get_result.title_native}\n\nCharacter : ${get_info.characters.join(", ")}\n`
-             ini_image = await getBuffer(get_result.image[0])
-             dha.sendMessage(from, ini_image, image, { caption: teks, quoted: mek })
-             anu = await fetchJson(`https://api.lolhuman.xyz/api/nhentaipdf/${henid}?apikey=${setting.lolkey}`)
-             pdf = await getBuffer(anu.result)
-             dha.sendMessage(from, pdf, document, { quoted: mek, mimetype: Mimetype.pdf, filename: `${get_result.title_romaji}.pdf`, thumbnail: ini_image })
-             } catch (e) {
-             console.log(e)
-             reply(String(e))
+             ini_buffer = await getBuffer(get_result)
+             await dha.sendMessage(from, ini_buffer, document, { quoted: al, mimetype: Mimetype.pdf, filename: `${henid}.pdf` })
+             } catch(err) {
+             if (err.message) return reply('error')
 }
              break
        case 'nhentai':
