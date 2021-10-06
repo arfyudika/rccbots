@@ -2195,7 +2195,7 @@ case 'tiktok':
              try {
              reply(mess.wait)
              henid = args[0]
-             get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentaipdf/${henid}?apikey=${apikey}`)
+             get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentaipdf/${henid}?apikey=${setting.lolkey}`)
              get_result = get_result.result
              ini_buffer = await getBuffer(get_result)
              await dha.sendMessage(from, ini_buffer, document, { quoted: mek, mimetype: Mimetype.pdf, filename: `${henid}.pdf` })
