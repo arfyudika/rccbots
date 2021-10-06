@@ -806,15 +806,15 @@ function banChat() {
                break 
         case 'owner':
         case 'creator':
-               sendKontak(from, `${owner}`, `${ownerName}`, 'Sibukk!!')
+               sendKontak(from, `${owner}`, `${ownerName}`, 'ON 08.00 - 22.00')
                await sleep(1000)
                txtt =`Hai Kak..... ${pushname}\nItu Ownerku, Mau tau soal apa ya?`
 
-               buttons = [{buttonId: '!youtube',buttonText:{displayText: 'YOUTUBE'},type:1},{buttonId:'!infoig',buttonText:{displayText:'INSTAGRAM'},type:1}]
+               buttons = [{buttonId: '!youtube',buttonText:{displayText: 'Facebook'},type:1},{buttonId:'!infoig',buttonText:{displayText:'INSTAGRAM'},type:1}]
 
                buttonsMessage = {
                contentText: `${txtt}`,
-               footerText: 'Jangan Sungkan Chat Ya Kak',
+               footerText: 'Jangan sungkat chat ya',
                buttons: buttons,
                headerType: 1
 }
@@ -847,9 +847,9 @@ dha.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 
 𝗜𝗡𝗙𝗢 𝗕𝗢𝗧
 ❏ NAMA : *RCC STORE*
-❏ API : *https://api.zeks.me*
+❏ API : *https://api.lolhuman.xyz*
 ❏ OWNER : *ARFYUDIKA*
-❏ API : *https://api.zeks.me*
+❏ API : *https://api.lolhuman.xyz*
 ❏ AKTIF : *${runtime(process.uptime())}*
 ❏ BATERAI : *${baterai}%*
 ❏ PREFIX : *『${prefix}』*
