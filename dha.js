@@ -2733,7 +2733,7 @@ a = `\`\`\`▢ Title : ${i.title}\`\`\`
               break
        case 'assalamualaikum':
               const ass =['https://rccbot.000webhostapp.com/suaracewek/WaalaikumsalamSayang.ogg','https://rccbot.000webhostapp.com/suaracewek/Waalaikumsalam.ogg']
-              const ass3 = rcc[Math.floor(Math.random() * ass.length)]
+              const ass3 = ass[Math.floor(Math.random() * ass.length)]
               ass2 = await getBuffer(ass3)
               dha.sendMessage(from, ass2, audio,{mimetype: 'audio/mp4', ptt:true, quoted: mek})
               break
