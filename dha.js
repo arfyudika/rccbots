@@ -1047,6 +1047,7 @@ BOT MENU
 *▢ ${prefix}assalamualaikum*
 *▢ ${prefix}akuganteng*
 *▢ ${prefix}amv*
+*▢ ${prefix}randomvn*
 
 𝖮𝖶𝖭𝖤𝖱 𝖬𝖤𝖭𝖴 
 *▢️ ${prefix}bc* _teks_
@@ -2745,6 +2746,19 @@ a = `\`\`\`▢ Title : ${i.title}\`\`\`
               amv = body.split('\n')
               amv = amv[Math.floor(Math.random() * amv.length)]
               sendMediaURL(from, amv)
+})
+             .catch(async (err) => {
+              console.error(err)
+              reply(`${err}`)
+})
+              break
+       case 'randomvn':
+              reply(mess.wait)
+              amv = await fetchText('https://raw.githubusercontent.com/Rafli2305/rccbots/master/randomvn.txt')
+              .then(async (body) => {
+              amv = body.split('\n')
+              amv = amv[Math.floor(Math.random() * amv.length)]
+              sendMediaURL(from, amv, audio,{mimetype: 'audio/mp4', ptt:true, quoted: mek})
 })
              .catch(async (err) => {
               console.error(err)
