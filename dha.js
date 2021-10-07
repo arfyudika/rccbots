@@ -35,6 +35,7 @@ const got = require("got");
 const qrcodes = require('qrcode');
 const imgbb = require('imgbb-uploader');
 const os = require('os');
+const absen = JSON.parse(fs.readFileSync('./database/grop/absen.json'))
 const { virtex, vipi } = require('./lib/virtex.js')
 const Mfake = fs.readFileSync ('./media/ganteng.jpg')
 const Mthumb = fs.readFileSync('./media/ganteng.jpg')
@@ -900,6 +901,9 @@ dha.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 *▢ ${prefix}hidetag* _teks/reply teks_
 *▢ ${prefix}linkgc*
 *▢ ${prefix}getdeskgc*
+*▢ ${prefix}absen*
+*▢ ${prefix}absensi*
+
 
 𝖦𝖠𝖬𝖤 𝖬𝖤𝖭𝖴 
 *▢ ${prefix}limitgame*
@@ -1985,7 +1989,6 @@ wa.me/6285282609948`
 }
              break
       case 'ytmp3':
-            if (!isPremium) return reply(mess.only.premium)
             if (args.length < 1) return reply('Link Nya Mana?')
             if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
             teks = args.join(' ')
@@ -2009,7 +2012,6 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
 })
             break
      case 'ytmp4':
-            if (!isPremium) return reply(mess.only.premium)
             if (args.length < 1) return reply('Link Nya Mana?')
             if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
             teks = args.join(' ')
@@ -2034,7 +2036,6 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
             break
      case 'ytmp4hd':
      case 'ythd':
-            if (!isPremium) return reply(mess.only.premium)
             if (args.length === 0) return reply(`Kirim perintah */ytmp4 _linkYt_*`)
             let isLinkks2 = args[0].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
             if (!isLinkks2) return reply(mess.error.Iv)
@@ -2095,7 +2096,6 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
 })
                break
         case 'mediafire':
-               if (!isPremium) return reply(mess.only.premium)
                if (args.length < 1) return reply('Link Nya Mana? ')
                if(!isUrl(args[0]) && !args[0].includes('mediafire')) return reply(mess.error.Iv)
                reply(mess.wait)
@@ -3825,6 +3825,7 @@ case 'getvn':
       case 'clearall':
              if (!isOwner) return reply(mess.only.owner)
              list_chat = await dha.chats.all()
+             dha.setMaxListeners(25)
              for (let chat of list_chat) {
              dha.modifyChat(chat.jid, "delete")
              }
@@ -4062,6 +4063,41 @@ case 'linkgc':
              reply('Reply chat bot!')
 }
              break
+case 'absensi':
+if(!isGroup) return reply(mess.only.group)
+absen.push(sender)
+fs.writeFileSync('./src/absen.json', JSON.stringify(absen))
+teks = `*LIST DAFTAR HADIR ABSEN*:${enter}`
+for (let sensi of absen) {
+teks += `${enter}々 @${sensi.split('@')[0]} ✓${enter}`
+}
+teks += `TOTAL MEMBER YG ABSEN : ${absen.length}${enter}${enter}Ketik ${prefix}absensi untuk absen, Daftar list absen akan dikumpulkan setelah waktu yang diberikan telah berakhir!`
+dha.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": absen}})
+break
+case 'absen':
+if(!isGroup) return reply(mess.only.group)
+if (args.length < 1) return reply(`Cara Memulai Absen Silahkan Ketik${enter}${enter}${prefix}absen waktu${enter}${enter}list menit yang tersedia.${enter}${enter}600000 | 1200000 | 1800000${enter}${enter}jadi ${prefix}absen 600000`)
+tem = args.join(" ")
+ini = absen.indexOf(from)
+absen.splice(ini, 1)
+fs.writeFileSync('./src/absen.json', JSON.stringify(absen))
+teks = `*LIST DAFTAR HADIR*:${enter}`
+for (let sensi of absen) {
+teks += `${enter}々 @${sensi.split('@')[0]} ✓${enter}`
+}
+teks += `ABSENSI : ${sensi.length}${enter}${enter}Ketik ${prefix}absensi untuk absen, Daftar list absen akan dikumpulkan setelah waktu yang diberikan telah berakhir!`
+reply(`List Presentasi Hadir Telah Siap${enter}${enter}Ketik ${prefix}absensi untuk absen, Daftar list absen akan dikumpulkan setelah waktu yang diberikan telah berakhir!`)
+setTimeout( () => {
+reply(`Waktu Absensi Telah Habis`)
+dha.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": absen}})
+}, tem)
+setTimeout( () => {
+ini = absen.indexOf(from)
+absen.splice(ini, 1)
+fs.writeFileSync('./src/absen.json', JSON.stringify(absen))
+}, tem)
+break
+
 //------------------< Fun >-------------------
     case 'public':
                 if (!mek.key.fromMe && !isOwner) return reply('Fitur Khusus Owner!!')
@@ -4283,7 +4319,7 @@ case 'linkgc':
                reply('Okeh nyala')
                break
         case 'info':  // Jangan Di Ubah Plise
-               urlinfo = 'https://telegra.ph/file/75454c11eac34c672fc12.jpg'
+               urlinfo = 'https://i.postimg.cc/HLtjVqDV/RCC.png'
                thankslort = `*━━━━INFO BOT━━━━*\n*O>Nama : RCC STORE*\n*O>JAM : ${moment().utcOffset('+0700').format('HH:mm')}*\n*O>DATE : ${moment.tz('Asia/Jakarta').format('DD/MM')}*\n*O>Tipe : Node Js*\n*O>Versi : 3.3*\n*━━━━━━━━━━━━━━━*`
              dha.sendMessage(from, await getBuffer(urlinfo), image, {quoted: mek, caption: thankslort })
              break
