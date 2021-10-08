@@ -3576,11 +3576,11 @@ break
                nombor = 1
                startnum = 0
                for (let x of listmenu) {
-               const yy = {title: 'User ID' + nombor++,
+               const yy = {title: 'User ID ' + nombor++,
                     rows: [
                        {
                         title: `${listmenuu[startnum++]}`,
-                        description: `\n\n\n\n\`\`\`Kesalahan id bukan tanggung jawab kami\`\`\``,
+                        description: `\n\n`Jika ada kesalahan id,\nbukan tanggung jawab kami`,
                         rowId: `${prefix}${x}`
                       }
                     ]
@@ -3590,43 +3590,43 @@ break
                listmsg(from, `${ucapanWaktu}`,   `Hai kak,\n*${pushname}*\nIsi data user game`, list)
                break
        case 'idff':
-              if (args.length < 1) return reply(`Ketik ${prefix}idgame\n${dataff}\n\n*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRANSFER_\n*2.* _PESANAN AKAN LANSUNG DI PROSES_\n*3.* _JIKA PESANAN ANDA LOW_\n_MOHON BERSABAR_\nwa.me/6285282609948`) 
+              if (args.length < 1) return reply(`Ketik ${prefix}idff ${dataff}\n\n*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRANSFER_\n*2.* _PESANAN LANGSUNG LANSUNG DI PROSES_\n*3.* _JIKA PESANAN LOW_\n_MOHON BERSABAR_\nwa.me/6285282609948`) 
               teks = args.join(' ')
               reply('Terima kasih telah order,\npesananmu akan segera di proses')
               dha.sendMessage('6285282609948@s.whatsapp.net',`*Data Free Fire:*\n${teks}`, text)
               break
        case 'idml':
-              if (args.length < 1) return reply(`Ketik ${prefix}idgame\n${dataml}\n\n*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRANSFER_\n*2.* _PESANAN AKAN LANSUNG DI PROSES_\n*3.* _JIKA PESANAN ANDA LOW_\n_MOHON BERSABAR_\nwa.me/6285282609948`) 
+              if (args.length < 1) return reply(`Ketik ${prefix}idml ${dataml}\n\n*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRANSFER_\n*2.* _PESANAN LANGSUNG LANSUNG DI PROSES_\n*3.* _JIKA PESANAN LOW_\n_MOHON BERSABAR_\nwa.me/6285282609948`) 
               teks = args.join(' ')
               reply('Terima kasih telah order,\npesananmu akan segera di proses')
               dha.sendMessage('6285282609948@s.whatsapp.net',`*Data Mobile Legends:*\n${teks}`, text)
               break
        case 'idgenshin':
-              if (args.length < 1) return reply(`Ketik ${prefix}idgame\n${datagenshin}\n\n*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRANSFER_\n*2.* _PESANAN AKAN LANSUNG DI PROSES_\n*3.* _JIKA PESANAN ANDA LOW_\n_MOHON BERSABAR_\nwa.me/6285282609948`) 
+              if (args.length < 1) return reply(`Ketik ${prefix}idgenshin ${datagenshin}\n\n*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRANSFER_\n*2.* _PESANAN LANGSUNG LANSUNG DI PROSES_\n*3.* _JIKA PESANAN LOW_\n_MOHON BERSABAR_\nwa.me/6285282609948`) 
               teks = args.join(' ')
               reply('Terima kasih telah order,\npesananmu akan segera di proses')
               dha.sendMessage('6285282609948@s.whatsapp.net',`*Data Genshin Impact:*\n${teks}`, text)
               break
        case 'idpb':
-              if (args.length < 1) return reply(`Ketik ${prefix}idgame\n${datapb}\n\n*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRANSFER_\n*2.* _PESANAN AKAN LANSUNG DI PROSES_\n*3.* _JIKA PESANAN ANDA LOW_\n_MOHON BERSABAR_\nwa.me/6285282609948`) 
+              if (args.length < 1) return reply(`Ketik ${prefix}idpb ${datapb}\n\n*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRANSFER_\n*2.* _PESANAN LANGSUNG LANSUNG DI PROSES_\n*3.* _JIKA PESANAN LOW_\n_MOHON BERSABAR_\nwa.me/6285282609948`) 
               teks = args.join(' ')
               reply('Terima kasih telah order,\npesananmu akan segera di proses')
               dha.sendMessage('6285282609948@s.whatsapp.net',`*Data Point Blank:*\n${teks}`, text)
               break
        case 'idgshell':
-              if (args.length < 1) return reply(`Ketik ${prefix}idgame\n${datags}\n\n*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRANSFER_\n*2.* _PESANAN AKAN LANSUNG DI PROSES_\n*3.* _JIKA PESANAN ANDA LOW_\n_MOHON BERSABAR_\nwa.me/6285282609948`) 
+              if (args.length < 1) return reply(`Ketik ${prefix}idgshell ${datags}\n\n*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRANSFER_\n*2.* _PESANAN LANGSUNG LANSUNG DI PROSES_\n*3.* _JIKA PESANAN LOW_\n_MOHON BERSABAR_\nwa.me/6285282609948`) 
               teks = args.join(' ')
               reply('Terima kasih telah order,\npesananmu akan segera di proses')
               dha.sendMessage('6285282609948@s.whatsapp.net',`*Data Garena Shell:*\n${teks}`, text)
               break
        case 'idhdi':
-              if (args.length < 1) return reply(`Ketik ${prefix}idgame\n${datahdi}\n\n*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRANSFER_\n*2.* _PESANAN AKAN LANSUNG DI PROSES_\n*3.* _JIKA PESANAN ANDA LOW_\n_MOHON BERSABAR_\nwa.me/6285282609948`) 
+              if (args.length < 1) return reply(`Ketik ${prefix}idhdi ${datahdi}\n\n*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRANSFER_\n*2.* _PESANAN LANGSUNG LANSUNG DI PROSES_\n*3.* _JIKA PESANAN LOW_\n_MOHON BERSABAR_\nwa.me/6285282609948`) 
               teks = args.join(' ')
               reply('Terima kasih telah order,\npesananmu akan segera di proses')
               dha.sendMessage('6285282609948@s.whatsapp.net',`*Data Higgs Domino:*\n${teks}`, text)
               break
        case 'idsosis':
-              if (args.length < 1) return reply(`Ketik ${prefix}idgame\n${datasosis}\n\n*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRANSFER_\n*2.* _PESANAN AKAN LANSUNG DI PROSES_\n*3.* _JIKA PESANAN ANDA LOW_\n_MOHON BERSABAR_\nwa.me/6285282609948`) 
+              if (args.length < 1) return reply(`Ketik ${prefix}idsosis ${datasosis}\n\n*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRANSFER_\n*2.* _PESANAN LANSUNG DI PROSES_\n*3.* _JIKA PESANAN LOW_\n_MOHON BERSABAR_\nwa.me/6285282609948`) 
               teks = args.join(' ')
               reply('Terima kasih telah order,\npesananmu akan segera di proses')
               dha.sendMessage('6285282609948@s.whatsapp.net',`*Data Sausage Man:*\n${teks}`, text)
