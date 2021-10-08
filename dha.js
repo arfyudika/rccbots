@@ -84,7 +84,13 @@ owner = setting.owner
 gamewaktu = setting.gamewaktu
 petik = '```'
 enter = '\n'
-idgm = 'NAMA GAME-ID GAME-USERNAME:'
+dataff = 'User ID-Item-Nickname'
+dataml = 'User ID-Server-Item-Nickname'
+datagenshin = 'User ID-Item'
+datapb = 'ID Game-Item'
+datags = 'ID Game-Item'
+datahdi = 'ID Game-Item'
+datasosis = 'Id Game-Item'
 fake = '𝐀𝐇𝐌𝐀𝐃 𝐑𝐀𝐅𝐋𝐈 𝐘𝐔𝐃𝐈𝐊𝐀'//GANTI NAMA KAMU BEP
 ban =[]
 
@@ -1135,7 +1141,7 @@ BOT MENU
                break
        case 'store':
                list = []
-               listmenu = [`ff`,`ml`,`genshin`,`pb`,`gs`,`hdi`,`sosis`]
+               listmenu = [`ff`,`ml`,`genshin`,`pb`,`gshell`,`hdi`,`sosis`]
                listmenuu = [`Diamond Free Fire`,`Diamond Mobile Legends`,`Genshin Impact`,`Cash Point Blank`,`Garena Shell`,`Higgs Domino`,`Candy Sausage`]
                nombor = 1
                startnum = 0
@@ -1708,7 +1714,7 @@ teksnya = `   *「PAYMENT」*
         dha.sendMessage(from, await getBuffer(gopeynya), image, {quoted: ftoko, caption: teksnya })
               break
  
-case 'dmff':
+case 'ff':
               gopeynya = 'https://i.postimg.cc/htQJwtgD/QRIS-RCC.png'
               teksnya = `  *「DIAMOND FREE FIRE」*
 ━━━━━━━━━━━━━━━━━━━━
@@ -1785,7 +1791,7 @@ ATAU HUBUNGIN HUB:
 wa.me/6285282609948`
               dha.sendMessage(from, await getBuffer(gopeynya), image, {quoted: ftoko, caption: teksnya })
               break
-case 'gs':
+case 'gshell':
               gopeynya = 'https://i.postimg.cc/htQJwtgD/QRIS-RCC.png'
               teksnya = `*  「GARENA SHELL」*
 ━━━━━━━━━━━━━━━━━━
@@ -1824,7 +1830,7 @@ wa.me/6285282609948`
               break
 case 'sosis':
               gopeynya = 'https://i.postimg.cc/htQJwtgD/QRIS-RCC.png'
-              teksnya = `*「CANDY SAUSAGE」*
+              teksnya = `    *「CANDY SAUSAGE」*
 ━━━━━━━━━━━━━━━━━━
 • *60 CANDY SAUSAGE = Rp 15.000*
 • *180 CANDY SAUSAGE = Rp 41.000*
@@ -1845,7 +1851,7 @@ wa.me/6285282609948`
               break
 case 'genshin':
               gopeynya = 'https://i.postimg.cc/htQJwtgD/QRIS-RCC.png'
-              teksnya = `*「GENSHIN IMPACT」*
+              teksnya = `   *「GENSHIN IMPACT」*
 ━━━━━━━━━━━━━━━━━━
 • *60 GENESIS = Rp 15.500*
 • *300 + 30 GENESIS = Rp 72.000*
@@ -1865,7 +1871,7 @@ wa.me/6285282609948`
               dha.sendMessage(from, await getBuffer(gopeynya), image, {quoted: ftext, caption: teksnya })
               break 
 			case 'order':
-              buttons = [{buttonId: `${prefix}datagame`,buttonText:{displayText: `MASUKAN ID`},type:1},{buttonId:`${prefix}transfer`,buttonText:{displayText:'LAKUKAN PEMBAYARAN'},type:1}]
+              buttons = [{buttonId: `${prefix}idgame`,buttonText:{displayText: `MASUKAN ID`},type:1},{buttonId:`${prefix}transfer`,buttonText:{displayText:'LAKUKAN PEMBAYARAN'},type:1}]
               imageMsg = (await dha.prepareMessageMedia(fs.readFileSync(`./media/yudha.jpg`), 'imageMessage', {thumbnail: fs.readFileSync(`./media/ganteng.jpg`)})).imageMessage
               buttonsMessage = {footerText:'PROSES 5 - 10 MENIT', imageMessage: imageMsg,
               contentText:`BAYAR DULU BIAR CEPAT PROSES`,buttons,headerType:4}
@@ -3563,11 +3569,67 @@ break
        case 'youtube': 
               reply(`Follow Facebook Owner:\nfacebook.com/arfyudikaa`)
               break
-       case 'datagame':
-              if (args.length < 1) return reply(`Ketik ${prefix}datagame\n${idgm}\n\n*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRANSFER_\n*2.* _PESANAN AKAN LANSUNG DI PROSES_\n*3.* _JIKA PESANAN ANDA LOW_\n_MOHON BERSABAR_\nwa.me/6285282609948`) 
+       case 'idgame':
+               list = []
+               listmenu = [`idff`,`idml`,`idgenshin`,`idpb`,`idgshell`,`idhdi`,`idsosis`]
+               listmenuu = [`Free Fire`,`Mobile Legends`,`Genshin Impact`,`Point Blank`,`Garena Shell`,`Higgs Domino`,`Sausage Man`]
+               nombor = 1
+               startnum = 0
+               for (let x of listmenu) {
+               const yy = {title: 'User ID' + nombor++,
+                    rows: [
+                       {
+                        title: `${listmenuu[startnum++]}`,
+                        description: `\n\n\n\n\`\`\`Kesalahan id bukan tanggung jawab kami\`\`\``,
+                        rowId: `${prefix}${x}`
+                      }
+                    ]
+                   }
+                        list.push(yy)
+           }
+               listmsg(from, `${ucapanWaktu}`,   `Hai kak,\n*${pushname}*\nIsi data user game`, list)
+               break
+       case 'idff':
+              if (args.length < 1) return reply(`Ketik ${prefix}idgame\n${dataff}\n\n*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRANSFER_\n*2.* _PESANAN AKAN LANSUNG DI PROSES_\n*3.* _JIKA PESANAN ANDA LOW_\n_MOHON BERSABAR_\nwa.me/6285282609948`) 
               teks = args.join(' ')
               reply('Terima kasih telah order,\npesananmu akan segera di proses')
-              dha.sendMessage('6285282609948@s.whatsapp.net',`*Orderan:*\n${teks}`, text)
+              dha.sendMessage('6285282609948@s.whatsapp.net',`*Data Free Fire:*\n${teks}`, text)
+              break
+       case 'idml':
+              if (args.length < 1) return reply(`Ketik ${prefix}idgame\n${dataml}\n\n*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRANSFER_\n*2.* _PESANAN AKAN LANSUNG DI PROSES_\n*3.* _JIKA PESANAN ANDA LOW_\n_MOHON BERSABAR_\nwa.me/6285282609948`) 
+              teks = args.join(' ')
+              reply('Terima kasih telah order,\npesananmu akan segera di proses')
+              dha.sendMessage('6285282609948@s.whatsapp.net',`*Data Mobile Legends:*\n${teks}`, text)
+              break
+       case 'idgenshin':
+              if (args.length < 1) return reply(`Ketik ${prefix}idgame\n${datagenshin}\n\n*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRANSFER_\n*2.* _PESANAN AKAN LANSUNG DI PROSES_\n*3.* _JIKA PESANAN ANDA LOW_\n_MOHON BERSABAR_\nwa.me/6285282609948`) 
+              teks = args.join(' ')
+              reply('Terima kasih telah order,\npesananmu akan segera di proses')
+              dha.sendMessage('6285282609948@s.whatsapp.net',`*Data Genshin Impact:*\n${teks}`, text)
+              break
+       case 'idpb':
+              if (args.length < 1) return reply(`Ketik ${prefix}idgame\n${datapb}\n\n*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRANSFER_\n*2.* _PESANAN AKAN LANSUNG DI PROSES_\n*3.* _JIKA PESANAN ANDA LOW_\n_MOHON BERSABAR_\nwa.me/6285282609948`) 
+              teks = args.join(' ')
+              reply('Terima kasih telah order,\npesananmu akan segera di proses')
+              dha.sendMessage('6285282609948@s.whatsapp.net',`*Data Point Blank:*\n${teks}`, text)
+              break
+       case 'idgshell':
+              if (args.length < 1) return reply(`Ketik ${prefix}idgame\n${datags}\n\n*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRANSFER_\n*2.* _PESANAN AKAN LANSUNG DI PROSES_\n*3.* _JIKA PESANAN ANDA LOW_\n_MOHON BERSABAR_\nwa.me/6285282609948`) 
+              teks = args.join(' ')
+              reply('Terima kasih telah order,\npesananmu akan segera di proses')
+              dha.sendMessage('6285282609948@s.whatsapp.net',`*Data Garena Shell:*\n${teks}`, text)
+              break
+       case 'idhdi':
+              if (args.length < 1) return reply(`Ketik ${prefix}idgame\n${datahdi}\n\n*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRANSFER_\n*2.* _PESANAN AKAN LANSUNG DI PROSES_\n*3.* _JIKA PESANAN ANDA LOW_\n_MOHON BERSABAR_\nwa.me/6285282609948`) 
+              teks = args.join(' ')
+              reply('Terima kasih telah order,\npesananmu akan segera di proses')
+              dha.sendMessage('6285282609948@s.whatsapp.net',`*Data Higgs Domino:*\n${teks}`, text)
+              break
+       case 'idsosis':
+              if (args.length < 1) return reply(`Ketik ${prefix}idgame\n${datasosis}\n\n*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRANSFER_\n*2.* _PESANAN AKAN LANSUNG DI PROSES_\n*3.* _JIKA PESANAN ANDA LOW_\n_MOHON BERSABAR_\nwa.me/6285282609948`) 
+              teks = args.join(' ')
+              reply('Terima kasih telah order,\npesananmu akan segera di proses')
+              dha.sendMessage('6285282609948@s.whatsapp.net',`*Data Sausage Man:*\n${teks}`, text)
               break
       case 'ping':
       case 'speed':
@@ -3579,7 +3641,7 @@ break
               groups = dha.chats.array.filter(v => v.jid.endsWith('g.us'))
               privat = dha.chats.array.filter(v => v.jid.endsWith('s.whatsapp.net'))
               ram2 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
-              charger = `${charging ? 'lagi dicas' : 'ga dicas'}`
+              charger = `${charging ? 'On Charge' : 'Not Charge'}`
               uptime = process.uptime();
               timestampe = speed();
               totalChat = await dha.chats.all()
