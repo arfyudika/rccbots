@@ -3580,7 +3580,7 @@ break
               break
        case 'datagame':
               if (args.length < 1) return reply(`Ketik ${prefix}datagame\n${idgm}\n\n*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRANSFER_\n*2.* _PESANAN AKAN LANSUNG DI PROSES_\n*3.* _JIKA PESANAN ANDA LOW_\n_MOHON BERSABAR_\nwa.me/6285282609948`) 
-              teks = args.join(' ')'
+              teks = args.join(' ')
               reply('Terima kasih telah order,\npesananmu akan segera di proses')
               dha.sendMessage('6285282609948@s.whatsapp.net',`*Orderan:*\n ${teks}`, text)
               break
