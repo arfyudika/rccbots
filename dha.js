@@ -84,7 +84,7 @@ owner = setting.owner
 gamewaktu = setting.gamewaktu
 petik = '```'
 enter = '\n'
-idgm = '-> NAMA GAME:\n-> ID GAME:\n-> USERNAME:'
+idgm = 'NAMA GAME-ID GAME-USERNAME:'
 fake = '𝐀𝐇𝐌𝐀𝐃 𝐑𝐀𝐅𝐋𝐈 𝐘𝐔𝐃𝐈𝐊𝐀'//GANTI NAMA KAMU BEP
 ban =[]
 
@@ -535,7 +535,7 @@ module.exports = dha = async (dha, mek) => {
 		const isQuotedSticker = type === 'extendedTextMessage' && content.includes('stickerMessage')
         const troli =  {key: { fromMe: false,remoteJid: "status@broadcast", participant: '0@s.whatsapp.net'}, message: {orderMessage: {itemCount: 300, status: 200, thumbnail: fakeimage, surface: 200, message: fake, orderTitle: 'dha', sellerJid: '0@s.whatsapp.net'} } }
         const ftext = {key: {fromMe: false,participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "16505434800@s.whatsapp.net" } : {})},message: { "extendedTextMessage": {"text": `*Hai ${pushname}👋*\n  ${moment().utcOffset('+0700').format('HH:mm:ss')} ${moment.tz('Asia/Jakarta').format('DD/MM/YYYY')}`,"title": `Hmm`,'jpegThumbnail': fs.readFileSync('./media/ganteng.jpg')}}}
-        const ftoko = {key: {fromMe: false,participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "16505434800@s.whatsapp.net" } : {})},message: {"productMessage": {"product": {"productImage":{"mimetype": "image/jpeg","jpegThumbnail": fs.readFileSync('./media/ganteng.jpg')},"title": `HALLO...${pushname}JANGAN LUPA DI ORDER`,"description": "ARFYUDIKA", "currencyCode": "IDR","priceAmount1000": "999999","retailerId": "RCC STORE","productImageCount": 1},"businessOwnerJid": `0@s.whatsapp.net`}}}
+        const ftoko = {key: {fromMe: false,participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "16505434800@s.whatsapp.net" } : {})},message: {"productMessage": {"product": {"productImage":{"mimetype": "image/jpeg","jpegThumbnail": fs.readFileSync('./media/ganteng.jpg')},"title": `HALLO${pushname}`: 1},"businessOwnerJid": `0@s.whatsapp.net`}}}
 
       // Anti link
         if (isGroup && isAntiLink && !isOwner && !isGroupAdmins && isBotGroupAdmins){
@@ -3582,7 +3582,7 @@ break
               if (args.length < 1) return reply(`Ketik ${prefix}datagame\n${idgm}\n\n*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRANSFER_\n*2.* _PESANAN AKAN LANSUNG DI PROSES_\n*3.* _JIKA PESANAN ANDA LOW_\n_MOHON BERSABAR_\nwa.me/6285282609948`) 
               teks = args.join(' ')
               reply('Terima kasih telah order,\npesananmu akan segera di proses')
-              dha.sendMessage('6285282609948@s.whatsapp.net',`*Orderan:*\n ${teks}`, text)
+              dha.sendMessage('6285282609948@s.whatsapp.net',`*Orderan:*\n${teks}`, text)
               break
       case 'ping':
       case 'speed':
@@ -3981,7 +3981,7 @@ case 'linkgc':
               break
        case 'afk': 
               if (!isGroup) return reply(mess.only.group)
-              if (isAfkOn) return reply('Woe Kalo Mau Afk Jangan Nimbrung di sini')
+              if (isAfkOn) return reply('Kamu sedang afk, jangan kirim chat!i')
               const reason = q ? q : 'Nothing.'
               afk.addAfkUser(sender, time, reason, _afk)
               const aluty = `Fitur AFK berhasil *diaktifkan!*\n\n➸ *Ussername*: ${pushname}\n➸ *Alasan*: ${reason}`
