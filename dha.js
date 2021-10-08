@@ -1880,14 +1880,10 @@ wa.me/6285282609948`
               dha.sendMessage(from, await getBuffer(gopeynya), image, {quoted: ftext, caption: teksnya })
               break 
 			case 'order':
-              if (args.length < 1) return reply(`Ketik ${prefix}order [ID] / [ID+SERVER]`) 
-              teks = args.join(' ')
               buttons = [{buttonId: `${prefix}masukandata`,buttonText:{displayText: `MASUKAN ID`},type:1},{buttonId:`${prefix}bayar`,buttonText:{displayText:'LAKUKAN PEMBAYARAN'},type:1}]
               imageMsg = (await dha.prepareMessageMedia(fs.readFileSync(`./media/yudha.jpg`), 'imageMessage', {thumbnail: fs.readFileSync(`./media/ganteng.jpg`)})).imageMessage
               buttonsMessage = {footerText:'PROSES 5 - 10 MENIT', imageMessage: imageMsg,
               contentText:`BAYAR DULU BIAR CEPAT PROSES`,buttons,headerType:4}
-              reply('Terima Kasih Telah Order, Jika Itu Sekedar Iseng Maka Akan Di Ban Oleh Bot!')
-              dha.sendMessage('6285282609948@s.whatsapp.net',`*Order:*\n ${teks}`, text)
               prep = await dha.prepareMessageFromContent(from,{buttonsMessage},{quoted: ftoko})
               dha.relayWAMessage(prep)
               break
@@ -3583,8 +3579,11 @@ break
               reply(`Follow Facebook Owner:\nfacebook.com/arfyudikaa`)
               break
        case 'masukandata':
-             reply(`*「BOT MELAYANI」*\n\n━━━━━━━━━━━━━━━━━━━━\n\nMASUKKAN DATA BERIKUT\n*•NAMA GAME:*\n*•ID GAME:*\n*•USER NAME:*\n━━━━━━━━━━━━━━━━━━━━\n*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRXNYA_\n*2.* _OTOMATIS PESANAN_\n_LANSUNG DI PROSES_\n*3.* _PESANAN ANDA DI PROSES_\n_OLEH_\n*ARFYUDIKA*\n_JIKA PESANAN ANDA LOW_\n_PROSES MOHON BERSABAR_\nwa.me/6285282609948`)
-             dha.sendMessage('6285282609948@s.whatsapp.net',`*Orderan:* ${teks}`, text)
+              if (args.length < 1) return reply(`Ketik ${prefix}masukandata\n- NAMA GAME:\n-n ID GAME:\n- USERNAME:`) 
+              teks = args.join(' ')
+              reply(`*     「BOT MELAYANI」*\n\n━━━━━━━━━━━━━━━━━━━━\nMASUKKAN DATA BERIKUT\n*•NAMA GAME:*\n*•ID GAME:*\n*•USER NAME:*\*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRXNYA_\n*2.* _OTOMATIS PESANAN_\n_LANSUNG DI PROSES_\*3.*_JIKA PESANAN ANDA LOW_\n_MOHON BERSABAR_\nwa.me/6285282609948`)
+              reply('Terima Kasih Telah Order, Jika Itu Sekedar Iseng Maka Akan Di Ban Oleh Bot!')
+              dha.sendMessage('6285282609948@s.whatsapp.net',`*Orderan:*\n ${teks}`, text)
               break
       case 'ping':
       case 'speed':
