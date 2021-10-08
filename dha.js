@@ -3580,7 +3580,7 @@ break
                     rows: [
                        {
                         title: `${listmenuu[startnum++]}`,
-                        description: `\n\n`Jika ada kesalahan id,\nbukan tanggung jawab kami`,
+                        description: `\n\nJika ada kesalahan id,\nbukan tanggung jawab kami`,
                         rowId: `${prefix}${x}`
                       }
                     ]
