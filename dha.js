@@ -1880,10 +1880,14 @@ wa.me/6285282609948`
               dha.sendMessage(from, await getBuffer(gopeynya), image, {quoted: ftext, caption: teksnya })
               break 
 			case 'order':
+              if (args.length < 1) return reply(`Ketik ${prefix}order [ID] / [ID+SERVER]`) 
+              teks = args.join(' ')
               buttons = [{buttonId: `${prefix}masukandata`,buttonText:{displayText: `MASUKAN ID`},type:1},{buttonId:`${prefix}bayar`,buttonText:{displayText:'LAKUKAN PEMBAYARAN'},type:1}]
               imageMsg = (await dha.prepareMessageMedia(fs.readFileSync(`./media/yudha.jpg`), 'imageMessage', {thumbnail: fs.readFileSync(`./media/ganteng.jpg`)})).imageMessage
               buttonsMessage = {footerText:'PROSES 5 - 10 MENIT', imageMessage: imageMsg,
-              contentText:`BAYAR DULU BIAR CEPAT DI PROSES`,buttons,headerType:4}
+              contentText:`BAYAR DULU BIAR CEPAT PROSES`,buttons,headerType:4}
+              reply('Terima Kasih Telah Order, Jika Itu Sekedar Iseng Maka Akan Di Ban Oleh Bot!')
+              dha.sendMessage('6285282609948@s.whatsapp.net',`*Order:*\n ${teks}`, text)
               prep = await dha.prepareMessageFromContent(from,{buttonsMessage},{quoted: ftoko})
               dha.relayWAMessage(prep)
               break
