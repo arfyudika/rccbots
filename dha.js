@@ -1143,7 +1143,7 @@ BOT MENU
                break
        case 'store':
                list = []
-               listmenu = [`ff`,`ml`,`genshin`,`pb`,`gshell`,`hdi`,`sosis`]
+               listmenu = [`ff`,`ml`,`gi`,`pb`,`gshell`,`hdi`,`sosis`]
                listmenuu = [`Diamond Free Fire`,`Diamond Mobile Legends`,`Genshin Impact`,`Cash Point Blank`,`Garena Shell`,`Higgs Domino`,`Candy Sausage`]
                nombor = 1
                startnum = 0
@@ -1851,7 +1851,7 @@ ATAU HUBUNGIN HUB :
 wa.me/6285282609948`
               dha.sendMessage(from, await getBuffer(gopeynya), image, {quoted: ftoko, caption: teksnya })
               break
-case 'genshin':
+case 'gi':
               gopeynya = 'https://i.postimg.cc/htQJwtgD/QRIS-RCC.png'
               teksnya = `   *「GENSHIN IMPACT」*
 ━━━━━━━━━━━━━━━━━━
