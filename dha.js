@@ -1,5 +1,5 @@
 const {
-    WAConnection,
+    WAConnectimovieon,
 	MessageType,
 	Presence,
 	MessageOptions,
@@ -942,6 +942,7 @@ dha.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 *▢ ${prefix}listsurah*
 
 𝖣𝖮𝖶𝖭𝖫𝖮𝖠𝖣 𝖬𝖤𝖭𝖴 
+*▢ ${prefix}lk21*
 *▢ ${prefix}fbdl*
 *▢ ${prefix}igdl*
 *▢ ${prefix}igdl2*
@@ -1017,7 +1018,8 @@ dha.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 *▢ ${prefix}listcmd*
 *▢ ${prefix}delcmd*
 
-𝖶𝖨𝖡𝖴 𝖬𝖤𝖭𝖴 
+𝖶𝖨𝖡𝖴 𝖬𝖤𝖭𝖴
+*▢ ${prefix}genshin* 
 *▢ ${prefix}loli*
 *▢ ${prefix}manga*
 *▢ ${prefix}anime*
@@ -1911,6 +1913,27 @@ wa.me/6285282609948`
               break
 //------------------< self and public >---------------------
 //------------------< Downloader/Search/Anime >-------------------
+                case 'lk21':
+                    if (args.length == 0) return reply(`Example: ${prefix + command} Transformer`)
+                    query = args.join(" ")
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/lk21?apikey=${setting.lolkey}&query=${query}`)
+                    get_result = get_result.result
+                    ini_txt = `Title : ${get_result.title}\n`
+                    ini_txt += `Link : ${get_result.link}\n`
+                    ini_txt += `Genre : ${get_result.genre}\n`
+                    ini_txt += `Views : ${get_result.views}\n`
+                    ini_txt += `Duration : ${get_result.duration}\n`
+                    ini_txt += `Tahun : ${get_result.tahun}\n`
+                    ini_txt += `Rating : ${get_result.rating}\n`
+                    ini_txt += `Desc : ${get_result.desc}\n`
+                    ini_txt += `Actors : ${get_result.actors.join(", ")}\n`
+                    ini_txt += `Location : ${get_result.location}\n`
+                    ini_txt += `Date Release : ${get_result.date_release}\n`
+                    ini_txt += `Language : ${get_result.language}\n`
+                    ini_txt += `Link Download : ${get_result.link_dl}`
+                    thumbnail = await getBuffer(get_result.thumbnail)
+                    await dha.sendMessage(from, thumbnail, image, { quoted: mek, caption: ini_txt })
+                    break
        case 'igdl':
        case 'instagram':
               try {
@@ -2497,6 +2520,19 @@ buttons = [{buttonId: `${prefix + command}`,buttonText:{displayText: `➡️Next
               dha.relayWAMessage(prep)
               fs.unlinkSync(`./${sender}.jpeg`)
 break
+                    case 'genshin':
+                    if (args.length == 0) return reply(`Example: ${prefix + command} jean`)
+                    hero = args.join(" ")
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/genshin/${hero}?apikey=${setting.lolkey}`)
+                    get_result = get_result.result
+                    ini_txt = `Name : ${get_result.title}\n`
+                    ini_txt += `Intro : ${get_result.intro}\n`
+                    ini_txt += `Icon : ${get_result.icon}\n`
+                    ini_icon = await getBuffer(get_result.cover1)
+                    await dha.sendMessage(from, ini_icon, image, { quoted: mek, caption: ini_txt })
+                    ini_voice = await getBuffer(get_result.cv[0].audio[0])
+                    await dha.sendMessage(from, ini_voice, audio, { quoted: mek, mimetype: Mimetype.mp4Audio })
+                    break
        case 'loli':
               getBuffer(`https://api.lolhuman.xyz/api/random/nsfw/loli?apikey=${setting.lolkey}`).then((gambar) => {
               dha.sendMessage(from, gambar, image, { quoted: mek })
@@ -4457,21 +4493,21 @@ case 'kisahnabi':
 case 'jadwalsholat':
                     if (args.length == 0) return reply(`Example: ${prefix + command} Yogyakarta`)
                     daerah = args.join(" ")
-get_result = await fetchJson(`http://api.lolhuman.xyz/api/sholat/${daerah}?apikey=${setting.lolkey}`)
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/sholat/${daerah}?apikey=${apikey}`)
                     get_result = get_result.result
                     ini_txt = `Wilayah : ${get_result.wilayah}\n`
-                    ini_txt = `Tanggal : ${get_result.tanggal}\n`
-                    ini_txt = `Sahur : ${get_result.sahur}\n`
-                    ini_txt = `Imsak : ${get_result.imsak}\n`
-                    ini_txt = `Subuh : ${get_result.subuh}\n`
-                    ini_txt = `Terbit : ${get_result.terbit}\n`
-                    ini_txt = `Dhuha : ${get_result.dhuha}\n`
-                    ini_txt = `Dzuhur : ${get_result.dzuhur}\n`
-                    ini_txt = `Ashar : ${get_result.ashar}\n`
-                    ini_txt = `Maghrib : ${get_result.imsak}\n`
-                    ini_txt = `Isya : ${get_result.isya}`
+                    ini_txt += `Tanggal : ${get_result.tanggal}\n`
+                    ini_txt += `Sahur : ${get_result.sahur}\n`
+                    ini_txt += `Imsak : ${get_result.imsak}\n`
+                    ini_txt += `Subuh : ${get_result.subuh}\n`
+                    ini_txt += `Terbit : ${get_result.terbit}\n`
+                    ini_txt += `Dhuha : ${get_result.dhuha}\n`
+                    ini_txt += `Dzuhur : ${get_result.dzuhur}\n`
+                    ini_txt += `Ashar : ${get_result.ashar}\n`
+                    ini_txt += `Maghrib : ${get_result.imsak}\n`
+                    ini_txt += `Isya : ${get_result.isya}`
                     reply(ini_txt)
-                    break  
+                    break
              case 'listsurah':
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/quran?apikey=${setting.lolkey}`)
                     get_result = get_result.result
