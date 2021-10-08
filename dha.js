@@ -84,6 +84,7 @@ owner = setting.owner
 gamewaktu = setting.gamewaktu
 petik = '```'
 enter = '\n'
+idgm = '-> NAMA GAME:\n-> ID GAME:\n-> USERNAME:'
 fake = '𝐀𝐇𝐌𝐀𝐃 𝐑𝐀𝐅𝐋𝐈 𝐘𝐔𝐃𝐈𝐊𝐀'//GANTI NAMA KAMU BEP
 ban =[]
 
@@ -3579,8 +3580,7 @@ break
               break
        case 'datagame':
               if (args.length < 1) return reply(`Ketik ${prefix}datagame\n${idgm}\n\n*NOTE:*\n*1.* _JANGAN LUPA BUKTI TRANSFER_\n*2.* _PESANAN AKAN LANSUNG DI PROSES_\n*3.* _JIKA PESANAN ANDA LOW_\n_MOHON BERSABAR_\nwa.me/6285282609948`) 
-              teks = args.join(' ')
-              idgm = '-> NAMA GAME:\n-> ID GAME:\n-> USERNAME:'
+              teks = args.join(' ')'
               reply('Terima kasih telah order,\npesananmu akan segera di proses')
               dha.sendMessage('6285282609948@s.whatsapp.net',`*Orderan:*\n ${teks}`, text)
               break
