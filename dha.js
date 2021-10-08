@@ -839,7 +839,7 @@ dha.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 
         case 'menu':
         case 'help':
-        menu =`Hai Kak.....\n*${pushname}*\n\`\`\`Saya ARFYUDIKA, OWNER RCC STORE\`\`\`
+        menu =`Hai Kak,\n*${pushname}*\n\`\`\`Semoga harimu menyenangkan ^-^\`\`\`
         
 𝗜𝗡𝗙𝗢 𝗣𝗘𝗡𝗚𝗚𝗨𝗡𝗔 𝗕𝗢𝗧
 ❏ NAMA : *${pushname}*
@@ -911,7 +911,6 @@ dha.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 *▢ ${prefix}gelud* _@tag_
 *▢ ${prefix}tictactoe* _@tag_
 *▢ ${prefix}siapaaku*
-*▢ ${prefix}family100*
 *▢ ${prefix}kuismath*
 *▢ ${prefix}asahotak*
 *▢ ${prefix}tebaklirik*
@@ -992,7 +991,6 @@ dha.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 
 𝖲𝖳𝖠𝖫𝖪𝖨𝖭𝖦 𝖬𝖤𝖭𝖴 
 *▢ ${prefix}igstalk*
-*▢ ${prefix}igstalk*
 *▢ ${prefix}tiktokstalk*
 *▢ ${prefix}githubstalk*
 
@@ -1029,14 +1027,9 @@ dha.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 *▢️ ${prefix}wallnime*
 *▢️ ${prefix}kusonime*
 *▢️ ${prefix}megumin*
-*▢ ${prefix}otakudesu*
-*▢️ ${prefix}doujindesu*
 *▢️ ${prefix}storyanime*
 *▢️ ${prefix}otakuongoing*
-*▢ ${prefix}nhentai *code*
 *▢️ ${prefix}nekopoi _link_*
-*▢️ ${prefix}nekopoi3d*
-*▢️ ${prefix}nekopoicosplay*
 *▢ ${prefix}nekopoisearch*
 
 𝖮𝖳𝖧𝖤𝖱 𝖬𝖤𝖭𝖴 
@@ -1142,7 +1135,7 @@ BOT MENU
                break
        case 'store':
                list = []
-               listmenu = [`dmff`,`dmml`,`ucpubg`,`cpcod`,`cashpb`,`catcoin`,`candysausage`]
+               listmenu = [`ff`,`ml`,`genshin`,`pb`,`gs`,`hdi`,`sosis`]
                listmenuu = [`Diamond Free Fire`,`Diamond Mobile Legends`,`Genshin Impact`,`Cash Point Blank`,`Garena Shell`,`Higgs Domino`,`Candy Sausage`]
                nombor = 1
                startnum = 0
@@ -1158,7 +1151,7 @@ BOT MENU
                    }
                         list.push(yy)
            }
-               listmsg(from, `${ucapanWaktu}`,   `Hai kak.....\n*${pushname}*\nMau Top Up game apa kak pilih saja disini`, list)
+               listmsg(from, `${ucapanWaktu}`,   `Hai kak,\n*${pushname}*\nMau Top Up game apa?`, list)
                break
 //------------------< Game >------------------- 
         case 'limitgame': 
@@ -1625,14 +1618,14 @@ Ket : Ketik /resetgame , Untuk Mereset Permainan Yang Ada Di Grup!`, text, {cont
          case 'spamsms':
                     if (args.length == 0) return reply(`Example: ${prefix + command} 08303030303030`)
                     nomor = args[0]
-                    await fetchJson(`https://api.lolhuman.xyz/api/sms/spam1?apikey=genbotkey&nomor=${nomor}`)
-                    await fetchJson(`https://api.lolhuman.xyz/api/sms/spam2?apikey=genbotkey&nomor=${nomor}`)
-                    await fetchJson(`https://api.lolhuman.xyz/api/sms/spam3?apikey=genbotkey&nomor=${nomor}`)
-                    await fetchJson(`https://api.lolhuman.xyz/api/sms/spam4?apikey=genbotkey&nomor=${nomor}`)
-                    await fetchJson(`https://api.lolhuman.xyz/api/sms/spam5?apikey=genbotkey&nomor=${nomor}`)
-                    await fetchJson(`https://api.lolhuman.xyz/api/sms/spam6?apikey=genbotkey&nomor=${nomor}`)
-                    await fetchJson(`https://api.lolhuman.xyz/api/sms/spam7?apikey=genbotkey&nomor=${nomor}`)
-                    await fetchJson(`https://api.lolhuman.xyz/api/sms/spam8?apikey=genbotkey&nomor=${nomor}`)
+                    await fetchJson(`https://api.lolhuman.xyz/api/sms/spam1?apikey=${setting.lolkey}&nomor=${nomor}`)
+                    await fetchJson(`https://api.lolhuman.xyz/api/sms/spam2?apikey=${setting.lolkey}&nomor=${nomor}`)
+                    await fetchJson(`https://api.lolhuman.xyz/api/sms/spam3?apikey=${setting.lolkey}&nomor=${nomor}`)
+                    await fetchJson(`https://api.lolhuman.xyz/api/sms/spam4?apikey=${setting.lolkey}&nomor=${nomor}`)
+                    await fetchJson(`https://api.lolhuman.xyz/api/sms/spam5?apikey=${setting.lolkey}&nomor=${nomor}`)
+                    await fetchJson(`https://api.lolhuman.xyz/api/sms/spam6?apikey=${setting.lolkey}&nomor=${nomor}`)
+                    await fetchJson(`https://api.lolhuman.xyz/api/sms/spam7?apikey=${setting.lolkey}&nomor=${nomor}`)
+                    await fetchJson(`https://api.lolhuman.xyz/api/sms/spam8?apikey=${setting.lolkey}&nomor=${nomor}`)
                     reply("Success")
                     break        
 //------------------< Premium >-------------------
@@ -1686,7 +1679,7 @@ Ket : Ketik /resetgame , Untuk Mereset Permainan Yang Ada Di Grup!`, text, {cont
        case 'buypremium':
        case 'sewabot':
               gopeynya = 'https://i.postimg.cc/htQJwtgD/QRIS-RCC.png'
-              teksnya = `*── 「 PRICE LIST 」 ──*
+              teksnya = `  *── 「 PRICE LIST 」 ──*
 
 *Tarif Premium User adalah 10K Perbulan*
 *Keuntungan Premium Diantaranya:*
@@ -1704,20 +1697,20 @@ Ket : Ketik /resetgame , Untuk Mereset Permainan Yang Ada Di Grup!`, text, {cont
               dha.sendMessage(from, await getBuffer(gopeynya), image, {quoted: mek, caption: teksnya })
               break             
 //------------------< store menu >-------------------  
-case 'bayar':
+case 'transfer':
 gopeynya = 'https://i.postimg.cc/htQJwtgD/QRIS-RCC.png'
-teksnya = ` *「PAYMENT」*
+teksnya = `   *「PAYMENT」*
+━━━━━━━━━━━━━━━━━━
 • GOPAY : 085282609948
 • DANA : 081221661191
-• OVO : 082298958289
-• QRISS DI ATAS 
-━━━━━━━━━━━━━━━━━━━━`
+• OVO : 082298958289 
+━━━━━━━━━━━━━━━━━━`
         dha.sendMessage(from, await getBuffer(gopeynya), image, {quoted: ftoko, caption: teksnya })
               break
  
 case 'dmff':
               gopeynya = 'https://i.postimg.cc/htQJwtgD/QRIS-RCC.png'
-              teksnya = `*「DIAMOND FREE FIRE」*
+              teksnya = `  *「DIAMOND FREE FIRE」*
 ━━━━━━━━━━━━━━━━━━━━
 • *50 DIAMOND = Rp 7.500*
 • *100 DIAMOND = Rp 14.000*
@@ -1740,14 +1733,13 @@ _BUDAYAKAN BERTANYA_
 _SEBELUM PEMBELIAN_
 JIKA BERMINAT 
 #order
-ATAU HUBUNGIN HUB :
-   *(*
+ATAU HUBUNGIN HUB:
 wa.me/6285282609948`
               dha.sendMessage(from, await getBuffer(gopeynya), image, {quoted: ftoko, caption: teksnya })
               break
- case 'dmml':
+ case 'ml':
               gopeynya = 'https://i.postimg.cc/htQJwtgD/QRIS-RCC.png'
-              teksnya = `*「DIAMOND MLBB」*
+              teksnya = `  *「DIAMOND MLBB」*
 ━━━━━━━━━━━━━━━━━━━━
 • *86 DIAMOND = Rp 19.500*
 • *172 DIAMOND = Rp 38.750*
@@ -1769,20 +1761,19 @@ _BUDAYAKAN BERTANYA_
 _SEBELUM PEMBELIAN_
 JIKA BERMINAT 
 #order
-ATAU HUBUNGIN HUB :
-   *arfyudika*
+ATAU HUBUNGIN HUB:
 wa.me/6285282609948`
               dha.sendMessage(from, await getBuffer(gopeynya), image, {quoted: ftoko, caption: teksnya })
               break
-case 'cpcod':
+case 'pb':
               gopeynya = 'https://i.postimg.cc/htQJwtgD/QRIS-RCC.png'
-              teksnya = `*「CASH POINT BLANK」*
-━━━━━━━━━━━━━━━━━━━━
+              teksnya = `   *「CASH POINT BLANK」*
+━━━━━━━━━━━━━━━━━━
 • *1200 PB CASH = Rp 10.000*
 • *2400 PB CASH = Rp 20.000*
 • *6000 PB CASH = Rp 48.000*
 • *12000 PB CASH = Rp 95.000*
-━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━
 *NOTE :*
 _HARGA BISA BERUBAH_
 _SEWAKTU WAKTU_
@@ -1790,20 +1781,19 @@ _BUDAYAKAN BERTANYA_
 _SEBELUM PEMBELIAN_
 JIKA BERMINAT 
 #order
-ATAU HUBUNGIN HUB :
-   *arfyudika*
+ATAU HUBUNGIN HUB: 
 wa.me/6285282609948`
               dha.sendMessage(from, await getBuffer(gopeynya), image, {quoted: ftoko, caption: teksnya })
               break
-case 'cashpb':
+case 'gs':
               gopeynya = 'https://i.postimg.cc/htQJwtgD/QRIS-RCC.png'
-              teksnya = `*「CASH POIN BLANK」*
-━━━━━━━━━━━━━━━━━━━━
+              teksnya = `*  「GARENA SHELL」*
+━━━━━━━━━━━━━━━━━━
 • *33 GS = Rp 10.000*
 • *66 GS = Rp 19.000*
 • *165 GS = Rp 46.500*
 • *330 GS = Rp 91.500*
-━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━
 *NOTE :*
 _HARGA BISA BERUBAH_
 _SEWAKTU WAKTU_
@@ -1811,17 +1801,16 @@ _BUDAYAKAN BERTANYA_
 _SEBELUM PEMBELIAN_
 JIKA BERMINAT 
 #order
-ATAU HUBUNGIN HUB :
-   *arfyudika*
+ATAU HUBUNGIN HUB:
 wa.me/6285282609948`
               dha.sendMessage(from, await getBuffer(gopeynya), image, {quoted: toko, caption: teksnya })
               break
-case 'catcoin':
+case 'hdi':
               gopeynya = 'https://i.postimg.cc/htQJwtgD/QRIS-RCC.png'
               teksnya = `*「CHIP HIGGS DOMINO」*
-━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━
 • *1B CHIP HDI = Rp 66.000*
-━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━
 *NOTE :*
 _HARGA BISA BERUBAH_
 _SEWAKTU WAKTU_
@@ -1830,20 +1819,19 @@ _SEBELUM PEMBELIAN_
 JIKA BERMINAT 
 #order
 ATAU HUBUNGIN HUB :
-   *arfyudika*
 wa.me/6285282609948`
               dha.sendMessage(from, await getBuffer(gopeynya), image, {quoted: ftoko, caption: teksnya })
               break
-case 'candysausage':
+case 'sosis':
               gopeynya = 'https://i.postimg.cc/htQJwtgD/QRIS-RCC.png'
               teksnya = `*「CANDY SAUSAGE」*
-━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━
 • *60 CANDY SAUSAGE = Rp 15.000*
 • *180 CANDY SAUSAGE = Rp 41.000*
 • *316 CANDY SAUSAGE = Rp 69.500*
 • *680 CANDY SAUSAGE = Rp 137.000*
 • *1280 CANDY SAUSAGE = Rp 275.000*
-━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━
 *NOTE :*
 _HARGA BISA BERUBAH_
 _SEWAKTU WAKTU_
@@ -1852,20 +1840,19 @@ _SEBELUM PEMBELIAN_
 JIKA BERMINAT 
 #order
 ATAU HUBUNGIN HUB :
-   *arfyudika*
 wa.me/6285282609948`
               dha.sendMessage(from, await getBuffer(gopeynya), image, {quoted: ftoko, caption: teksnya })
               break
-case 'ucpubg':
+case 'genshin':
               gopeynya = 'https://i.postimg.cc/htQJwtgD/QRIS-RCC.png'
               teksnya = `*「GENSHIN IMPACT」*
-━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━
 • *60 GENESIS = Rp 15.500*
 • *300 + 30 GENESIS = Rp 72.000*
 • *980 + 110 GENESIS  = Rp 213.000*
 • *1980 + 260 GENESIS = Rp 457.000*
 • *3280 + 600 GENESIS = Rp 740.000*
-━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━
 *NOTE :*
 _HARGA BISA BERUBAH_
 _SEWAKTU WAKTU_
@@ -1874,12 +1861,11 @@ _SEBELUM PEMBELIAN_
 JIKA BERMINAT 
 #order
 ATAU HUBUNGIN HUB :
-   *arfyudika*
 wa.me/6285282609948`
               dha.sendMessage(from, await getBuffer(gopeynya), image, {quoted: ftext, caption: teksnya })
               break 
 			case 'order':
-              buttons = [{buttonId: `${prefix}datagame`,buttonText:{displayText: `MASUKAN ID`},type:1},{buttonId:`${prefix}bayar`,buttonText:{displayText:'LAKUKAN PEMBAYARAN'},type:1}]
+              buttons = [{buttonId: `${prefix}datagame`,buttonText:{displayText: `MASUKAN ID`},type:1},{buttonId:`${prefix}transfer`,buttonText:{displayText:'LAKUKAN PEMBAYARAN'},type:1}]
               imageMsg = (await dha.prepareMessageMedia(fs.readFileSync(`./media/yudha.jpg`), 'imageMessage', {thumbnail: fs.readFileSync(`./media/ganteng.jpg`)})).imageMessage
               buttonsMessage = {footerText:'PROSES 5 - 10 MENIT', imageMessage: imageMsg,
               contentText:`BAYAR DULU BIAR CEPAT PROSES`,buttons,headerType:4}
@@ -2499,7 +2485,7 @@ v = await fetchJson(`https://api.waifu.pics/nsfw/waifu`)
 inifile = sendMediaURL(from, v.url, )
 buttons = [{buttonId: `${prefix + command}`,buttonText:{displayText: `➡️Next`},type:1},{buttonId:`${prefix}nhentaibot`,buttonText:{displayText:'NHENTAI BOT'},type:1}]
               imageMsg = ( await dha.prepareMessage(from, inifile, 'imageMessage', {thumbnail: Buffer.alloc(0)})).message.imageMessage
-              buttonsMessage = {footerText:'Jangan Lupa Donasi Ya Kak ☕', imageMessage: imageMsg,
+              buttonsMessage = {footerText:'Jangan lupa donasi ya', imageMessage: imageMsg,
               contentText:`klik Next untuk ke gambar selanjut nya`,buttons,headerType:4}
               prep = await dha.prepareMessageFromContent(from,{buttonsMessage},{quoted: mek})
               dha.relayWAMessage(prep)
@@ -2532,7 +2518,7 @@ break
               fs.writeFileSync(`./${sender}.jpeg`, await getBuffer(wipi))
 		      buttons = [{buttonId: `${prefix + command}`,buttonText:{displayText: `➡️Next`},type:1},{buttonId:`${prefix}nhentaibot`,buttonText:{displayText:'NHENTAI BOT'},type:1}]
               imageMsg = ( await dha.prepareMessage(from, fs.readFileSync(`./${sender}.jpeg`), 'imageMessage', {thumbnail: Buffer.alloc(0)})).message.imageMessage
-              buttonsMessage = {footerText:'Jangan Lupa Donasi Ya Kak ☕', imageMessage: imageMsg,
+              buttonsMessage = {footerText:'Jangan lupa donasi ya', imageMessage: imageMsg,
               contentText:`klik Next untuk ke gambar selanjut nya`,buttons,headerType:4}
               prep = await dha.prepareMessageFromContent(from,{buttonsMessage},{quoted: mek})
               dha.relayWAMessage(prep)
@@ -2609,7 +2595,7 @@ Source : ${anu.result.source}
               if (!q) return reply('Linknya?')
               buttons = [{buttonId: `${prefix}play2 ${q}`,buttonText:{displayText: `🎥 Video`},type:1},{buttonId:`${prefix}playy ${q}`,buttonText:{displayText:'🎵 Mp3'},type:1}]
               imageMsg = (await dha.prepareMessageMedia(fs.readFileSync(`./media/ganteng.jpg`), 'imageMessage', {thumbnail: fs.readFileSync(`./media/ganteng.jpg`)})).imageMessage
-              buttonsMessage = {footerText:'Jangan Lupa Donasi Ya Kak ☕', imageMessage: imageMsg,
+              buttonsMessage = {footerText:'Jangan lupa donasi ya', imageMessage: imageMsg,
               contentText:`Silahkan Pilih Media yang Akan Di Download kak`,buttons,headerType:4}
               prep = await dha.prepareMessageFromContent(from,{buttonsMessage},{quoted: mek})
               dha.relayWAMessage(prep)
