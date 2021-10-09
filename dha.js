@@ -4325,13 +4325,12 @@ break
               dha.sendMessage(from, '*Pertanyaan :* '+kapankah+'\n*Jawaban :* '+ koh, text, { quoted: mek })
               break
        case 'truth':
-              reply(mess.wait)
               truth = await fetchText('https://raw.githubusercontent.com/AlvioAdjiJanuar/random/main/truth.txt')
               .then(async (body) => {
               truth = body.split('\n')
               truth = truth[Math.floor(Math.random() * truth.length)]
               truth = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
-              dha.sendMessage(from, truteh, image, { caption: '*Truth*\n\n'+ truth, quoted: mek })
+              dha.sendMessage(from, truth, image, { caption: '*Truth*\n\n'+ truth, quoted: mek })
               sendMediaURL(from, truth)
 })
              .catch(async (err) => {
