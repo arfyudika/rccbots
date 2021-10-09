@@ -888,6 +888,8 @@ dha.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 *▢ ${prefix}getbio* _reply_
 *▢ ${prefix}afk* _alasan_
 *▢ ${prefix}kontak* _nomor|nama_
+*▢ ${prefix}ban*
+*▢ ${prefix}unban*
 *▢ ${prefix}ceksewa*
 *▢ ${prefix}kickall*
 *▢ ${prefix}infogrup*
@@ -3967,7 +3969,7 @@ case 'getvn':
       case 'restart':
              if (!isOwner) return 
              reply(mess.wait)
-             exec(`node main`)
+             exec(`node dha`)
              reply('_Restarting Bot Success_')
              break
       case 'leaveall':
@@ -4323,12 +4325,18 @@ break
               dha.sendMessage(from, '*Pertanyaan :* '+kapankah+'\n*Jawaban :* '+ koh, text, { quoted: mek })
               break
        case 'truth':
-              trut= await fetchText('https://raw.githubusercontent.com/AlvioAdjiJanuar/random/main/truth.txt')
+              reply(mess.wait)
+              truth = await fetchText('https://raw.githubusercontent.com/AlvioAdjiJanuar/random/main/truth.txt')
               .then(async (body) => {
-              ttrth = body.split('\n')
-              truth = trut[Math.floor(Math.random() * trut.length)]
-              truteh = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
-              dha.sendMessage(from, truteh, image, { caption: '*Truth*\n\n'+ truteh, quoted: mek })
+              truth = body.split('\n')
+              truth = truth[Math.floor(Math.random() * truth.length)]
+              truth = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
+              dha.sendMessage(from, truteh, image, { caption: '*Truth*\n\n'+ truth, quoted: mek })
+              sendMediaURL(from, truth)
+})
+             .catch(async (err) => {
+              console.error(err)
+              reply(`${err}`)
 })
               break
        case 'dare':
