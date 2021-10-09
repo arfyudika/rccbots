@@ -1053,6 +1053,10 @@ BOT MENU
 *▢ ${prefix}akuganteng*
 *▢ ${prefix}amv*
 *▢ ${prefix}randomvn*
+*▢ ${prefix}araara*
+*▢ ${prefix}araara*
+
+
 
 𝖮𝖶𝖭𝖤𝖱 𝖬𝖤𝖭𝖴 
 *▢️ ${prefix}bc* _teks_
@@ -2785,6 +2789,14 @@ a = `\`\`\`▢ Title : ${i.title}\`\`\`
               reply(`${err}`)
 })
               break
+       case 'araara':
+       		ara = fs.readFileSync('./src/araara.mp3')
+			   dha.sendMessage(from, ara, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true} )
+			break
+       case 'ribut':
+       		ribut = fs.readFileSync('./src/ribut.mp3')
+			   dha.sendMessage(from, ribut, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true} )
+			break
        case 'tourl':
                if ((isMedia && !mek.message.videoMessage || isQuotedImage || isQuotedVideo ) && args.length == 0) {
                reply(mess.wait)
@@ -4224,6 +4236,8 @@ break
               reply(`Nama : ${predea.data.name}\n*Mati Pada Umur :* ${predea.data.age} Tahun.\n\n_Cepet Cepet Tobat Bro Soalnya Mati ga ada yang tau_`)
               break
        case 'toxic':
+      	    kasar = fs.readFileSync('./src/kasar.mp3')
+			  dha.sendMessage(from, kasar, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true} )
               Toxic().then(toxic => {
               reply (toxic)
 })
