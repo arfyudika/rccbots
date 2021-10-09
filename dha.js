@@ -3381,7 +3381,7 @@ break
                break   
           case 'spamcall':{
 if (args.length > 1) return reply(`Cara penggunaan : ${command} no hp`)
-if (isNaN(args[1])) return reply(`Harus berupa angka dan pastikan tidak memasukkan kode negara, contoh: ${command} 8127668234`)
+if (isNaN(args[1].startsWith('62')) return reply(`Harus berupa angka dan pastikan tidak memasukkan kode negara, contoh: ${command} 8127668234`)
 fetchJson(`https://api.zeks.xyz/api/spamcall?apikey=chika-key&no=${args[1]}`)
 .then((data) => {
     textImg(data.result.logs)
@@ -4323,21 +4323,21 @@ break
               dha.sendMessage(from, '*Pertanyaan :* '+kapankah+'\n*Jawaban :* '+ koh, text, { quoted: mek })
               break
        case 'truth':
-              truth= await fetchText('https://raw.githubusercontent.com/AlvioAdjiJanuar/random/main/dare.txt')
+              trut= await fetchText('https://raw.githubusercontent.com/AlvioAdjiJanuar/random/main/truth.txt')
               .then(async (body) => {
-              truth = body.split('\n')
-              truth = truth[Math.floor(Math.random() * truth.length)]
-              buffer = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
-              dha.sendMessage(from, truth, image, { caption: '*Truth*\n\n'+ truth, quoted: mek })
+              ttrth = body.split('\n')
+              truth = trut[Math.floor(Math.random() * trut.length)]
+              truteh = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
+              dha.sendMessage(from, truteh, image, { caption: '*Truth*\n\n'+ truteh, quoted: mek })
 })
               break
        case 'dare':
               dare = await fetchText('https://raw.githubusercontent.com/AlvioAdjiJanuar/random/main/dare.txt')
               .then(async (body) => {
               dare = body.split('\n')
-              dare = dare[Math.floor(Math.random() * dare.length)]
-              buffer = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
-              dha.sendMessage(from, buffer, image, { quoted: mek, caption: '*Dare*\n\n'+ dare })
+              der = dare[Math.floor(Math.random() * dare.length)]
+              buff = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
+              dha.sendMessage(from, buff, image, { quoted: mek, caption: '*Dare*\n\n'+ der })
 })
               break		
        case 'jadian':
