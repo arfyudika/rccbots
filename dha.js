@@ -985,6 +985,7 @@ dha.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 *▢ ${prefix}toimg*
 *▢ ${prefix}tovideo*
 *▢ ${prefix}tomp3*
+*▢ ${prefix}spamcall*
 
 𝖣𝖤𝖶𝖠𝖲𝖠 𝖬𝖤𝖭𝖴 
 *▢ ${prefix}xnxx* _link_
@@ -1055,8 +1056,6 @@ BOT MENU
 *▢ ${prefix}randomvn*
 *▢ ${prefix}araara*
 *▢ ${prefix}araara*
-
-
 
 𝖮𝖶𝖭𝖤𝖱 𝖬𝖤𝖭𝖴 
 *▢️ ${prefix}bc* _teks_
@@ -3379,14 +3378,28 @@ break
                } else {
                reply(mess.wrongFormat)
 }
-               break      
+               break   
+          case 'spamcall':{
+if (args.length > 1) return reply(`Cara penggunaan : ${command} no hp`)
+if (isNaN(args[1]) && args[1].startsWith('62')) return reply(`Harus berupa angka dan pastikan tidak memasukkan kode negara, contoh: ${command} 8127668234`)
+fetchJson(`https://api.zeks.xyz/api/spamcall?apikey=chika-key&no=${args[1]}`)
+.then((data) => {
+    textImg(data.result.logs)
+    })
+               .catch((err) => {
+            sendMess(ownerNumber, `${command} Error:` + err)
+            reply(mess.error.api)
+        })
+}
+break   
 //------------------<18+ Menu>-----------------------   
        case 'randombokep':
-            fetchJson(`https://pastebin.com/raw/k82VJzeP`).then((data) => {
-            var bokepp = JSON.parse(JSON.stringify(data))
-            var bokep2 =  bokepp[Math.floor(Math.random() * bokepp.length)]
-            textImg(bokep2.teks)
-    break
+    fetchJson(`https://pastebin.com/raw/k82VJzeP`).then((data) => {
+    var bokepp = JSON.parse(JSON.stringify(data))
+    var bokep2 =  bokepp[Math.floor(Math.random() * bokepp.length)]
+    textImg(bokep2.teks)
+})
+}
                 case 'xnxx':
                     if (args.length == 0) return reply(`Contoh: ${prefix + command} https://www.xnxx.com/video-uy5a73b/mom_is_horny_-_brooklyn`)
                     query = args.join(" ")
