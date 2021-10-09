@@ -3381,7 +3381,7 @@ break
                break   
           case 'spamcall':{
 if (args.length > 1) return reply(`Cara penggunaan : ${command} no hp`)
-if (isNaN(args[1].startsWith('62')) return reply(`Harus berupa angka dan pastikan tidak memasukkan kode negara, contoh: ${command} 8127668234`)
+if (isNaN(args[1].startsWith('62'))) return reply(`Harus berupa angka dan pastikan tidak memasukkan kode negara, contoh: ${command} 8127668234`)
 fetchJson(`https://api.zeks.xyz/api/spamcall?apikey=chika-key&no=${args[1]}`)
 .then((data) => {
     textImg(data.result.logs)
