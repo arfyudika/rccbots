@@ -4329,6 +4329,7 @@ break
               truth = truth[Math.floor(Math.random() * truth.length)]
               buffer = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
               dha.sendMessage(from, truteh, image, { caption: '*Truth*\n\n'+ ttrth, quoted: mek })
+})
               break
        case 'dare':
               dare = await fetchText('https://raw.githubusercontent.com/AlvioAdjiJanuar/random/main/dare.txt')
@@ -4337,6 +4338,7 @@ break
               dare = dare[Math.floor(Math.random() * dare.length)]
               buffer = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
               dha.sendMessage(from, buffer, image, { quoted: mek, caption: '*Dare*\n\n'+ der })
+})
               break		
        case 'jadian':
               jds = []
