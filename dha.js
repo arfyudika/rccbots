@@ -3399,7 +3399,7 @@ break
     var bokep2 =  bokepp[Math.floor(Math.random() * bokepp.length)]
     textImg(bokep2.teks)
 })
-}
+break
                 case 'xnxx':
                     if (args.length == 0) return reply(`Contoh: ${prefix + command} https://www.xnxx.com/video-uy5a73b/mom_is_horny_-_brooklyn`)
                     query = args.join(" ")
