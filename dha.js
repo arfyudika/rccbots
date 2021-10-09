@@ -3382,11 +3382,11 @@ break
                break      
 //------------------<18+ Menu>-----------------------   
        case 'randombokep':
-              bokep = body.slice(1)
-              const bo =['https://www.mediafire.com/download/8hnhjcf3pseubgy','https://www.mediafire.com/download/cty9phda3d1s62u','https://www.mediafire.com/download/8hnhjcf3pseubgy']
-              const kep = bo[Math.floor(Math.random() * bo.length)]
-              dha.sendMessage(from, '*PERMINTAAN:* '+bokep+'\n*DOSA TANGGUNG PRIBADI*\n*NI BRO FREE BUAT KAMU DOWNLOAD SENDIRI:* '+ kep, text, { quoted: ftoko, caption: `NI BOKEP SAYA DAPAT DARI *arfyudika* DOSA TANGGUNG SENDIRI🗿`})
-              break
+            fetchJson(`https://pastebin.com/raw/k82VJzeP`).then((data) => {
+            var bokepp = JSON.parse(JSON.stringify(data))
+            var bokep2 =  bokepp[Math.floor(Math.random() * bokepp.length)]
+            textImg(bokep2.teks)
+    break
                 case 'xnxx':
                     if (args.length == 0) return reply(`Contoh: ${prefix + command} https://www.xnxx.com/video-uy5a73b/mom_is_horny_-_brooklyn`)
                     query = args.join(" ")
@@ -4166,8 +4166,8 @@ if(!isGroup) return reply(mess.only.group)
 absen.push(sender)
 fs.writeFileSync('./src/absen.json', JSON.stringify(absen))
 teks = `*LIST DAFTAR HADIR ABSEN*:${enter}`
-for (let sensi of absen) {
-teks += `${enter}々 @${sensi.split('@')[0]} ✓${enter}`
+for (let sender of absen) {
+teks += `${enter}- @${sender.split('@')[0]} ✓${enter}`
 }
 teks += `TOTAL MEMBER YG ABSEN : ${absen.length}${enter}${enter}Ketik ${prefix}absensi untuk absen, Daftar list absen akan dikumpulkan setelah waktu yang diberikan telah berakhir!`
 dha.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": absen}})
@@ -4180,10 +4180,10 @@ ini = absen.indexOf(from)
 absen.splice(ini, 1)
 fs.writeFileSync('./src/absen.json', JSON.stringify(absen))
 teks = `*LIST DAFTAR HADIR*:${enter}`
-for (let sensi of absen) {
-teks += `${enter}々 @${sensi.split('@')[0]} ✓${enter}`
+for (let sender of absen) {
+teks += `${enter}々 @${sender.split('@')[0]} ✓${enter}`
 }
-teks += `ABSENSI : ${sensi.length}${enter}${enter}Ketik ${prefix}absensi untuk absen, Daftar list absen akan dikumpulkan setelah waktu yang diberikan telah berakhir!`
+teks += `ABSENSI : ${sender.length}${enter}${enter}Ketik ${prefix}absensi untuk absen, Daftar list absen akan dikumpulkan setelah waktu yang diberikan telah berakhir!`
 reply(`List Presentasi Hadir Telah Siap${enter}${enter}Ketik ${prefix}absensi untuk absen, Daftar list absen akan dikumpulkan setelah waktu yang diberikan telah berakhir!`)
 setTimeout( () => {
 reply(`Waktu Absensi Telah Habis`)
