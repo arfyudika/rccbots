@@ -996,8 +996,11 @@ dha.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 
 𝖯𝖤𝖭𝖣𝖨𝖣𝖨𝖪𝖠𝖭 𝖬𝖤𝖭𝖴 
 *▢ ${prefix}nulis*
-*▢ ${prefix}wiki*
+*▢ ${prefix}wikipedia*
 *▢ ${prefix}brainly*
+*▢ ${prefix}translate*
+*▢ ${prefix}covidindo*
+*▢ ${prefix}covidglobal*
 
 𝖲𝖳𝖠𝖫𝖪𝖨𝖭𝖦 𝖬𝖤𝖭𝖴 
 *▢ ${prefix}igstalk*
@@ -1684,7 +1687,7 @@ Ket : Ketik /resetgame , Untuk Mereset Permainan Yang Ada Di Grup!`, text, {cont
               for (let i of _premium){
               men.push(i.id)
               const checkExp = ms(i.expired - Date.now())
-              txt = `➸ *ID :* @${i.id.split("@")[0]}\n➸ *Expired*: ${checkExp.days} day(s) ${checkExp.hours} hour(s) ${checkExp.minutes} minute(s)\n\n`
+              txt += `➸ *ID :* @${i.id.split("@")[0]}\n➸ *Expired*: ${checkExp.days} day(s) ${checkExp.hours} hour(s) ${checkExp.minutes} minute(s)\n\n`
 }
               mentions(txt, men, true)
               break
@@ -2203,6 +2206,45 @@ case 'tiktok':
              console.log(res)
 })
              break
+                case 'wikipedia':
+                    if (args.length == 0) return reply(`Example: ${prefix + command} Tahu`)
+                    query = args.join(" ")
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/wiki?apikey=${apikey}&query=${query}`)
+                    get_result = get_result.result
+                    reply(get_result)
+                    break
+                case 'translate':
+                    if (args.length == 0) return reply(`Example: ${prefix + command} en Tahu Bacem`)
+                    kode_negara = args[0]
+                    args.shift()
+                    ini_txt = args.join(" ")
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/translate/auto/${kode_negara}?apikey=${setting.lolkey}&text=${ini_txt}`)
+                    get_result = get_result.result
+                    init_txt = `From : ${get_result.from}\n`
+                    init_txt += `To : ${get_result.to}\n`
+                    init_txt += `Original : ${get_result.original}\n`
+                    init_txt += `Translated : ${get_result.translated}\n`
+                    init_txt += `Pronunciation : ${get_result.pronunciation}\n`
+                    reply(init_txt)
+                    break
+               case 'covidindo':
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/corona/indonesia?apikey=${setting.lolkey}`)
+                    get_result = get_result.result
+                    ini_txt = `Positif : ${get_result.positif}\n`
+                    ini_txt += `Sembuh : ${get_result.sembuh}\n`
+                    ini_txt += `Dirawat : ${get_result.dirawat}\n`
+                    ini_txt += `Meninggal : ${get_result.meninggal}`
+                    reply(ini_txt)
+                    break
+                case 'covidglobal':
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/corona/global?apikey=${setting.lolkey}`)
+                    get_result = get_result.result
+                    ini_txt = `Positif : ${get_result.positif}\n`
+                    ini_txt += `Sembuh : ${get_result.sembuh}\n`
+                    ini_txt += `Dirawat : ${get_result.dirawat}\n`
+                    ini_txt += `Meninggal : ${get_result.meninggal}`
+                    reply(ini_txt)
+                    break
        case 'ssweb':
              if (args.length == 0) return reply(`Example: ${prefix + command} https://nekopoi.care/`)
              ini_link = args[0]
@@ -2223,7 +2265,6 @@ case 'tiktok':
 }
 break
        case 'nhentai':
-              if (!isPremium) return reply(mess.only.premium)
               if (args.length == 0) return reply(`Example: ${prefix + command} 344253`)
               reply(mess.wait)
               henid = args[0]
