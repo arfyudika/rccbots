@@ -45,7 +45,7 @@ const timeWib = moment.tz('Asia/Jakarta').format('DD/MM')
 const Exif = require('./lib/exif');
 const exif = new Exif();
 
-const { downloadMenu, infoMenu, gameMenu, groupMenu, funMenu, wibuMenu, ownerMenu, stickerMenu, otherMenu, rulesBot, islamMenu, sertiMenu, ceritaMenu, makerMenu,dewasaMenu, toolsMenu} = require('./message/help.js')
+const { downloadMenu, infoMenu, gameMenu, groupMenu, funMenu, wibuMenu, ownerMenu, stickerMenu, otherMenu, rulesBot, islamMenu, sertiMenu, ceritaMenu, makerMenu, dewasaMenu, toolsMenu, topupMenu} = require('./message/help.js')
 const { getBuffer, getGroupAdmins, getRandom, runtime, sleep } = require('./lib/myfunc')
 const { fetchJson, getBase64, kyun, createExif } = require('./lib/fetch')
 const { color, bgcolor } = require('./lib/color')
@@ -855,265 +855,35 @@ dha.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 
 𝗜𝗡𝗙𝗢 𝗕𝗢𝗧
 ❏ NAMA : *RCC STORE*
-❏ API : *https://api.lolhuman.xyz*
 ❏ OWNER : *ARFYUDIKA*
 ❏ API : *https://api.lolhuman.xyz*
 ❏ AKTIF : *${runtime(process.uptime())}*
 ❏ BATERAI : *${baterai}%*
 ❏ PREFIX : *『${prefix}』*
 
-   ━━━━━ 𝗔𝗟𝗟 𝗠𝗘𝗡𝗨 ━━━━━
+   ━━━━━ 𝗟𝗜𝗦𝗧 𝗠𝗘𝗡𝗨 ━━━━━
 
-𝖨𝖭𝖥𝖮 𝖬𝖤𝖭𝖴
-*▢ ${prefix}update*
-*▢ ${prefix}iklan*
-*▢ ${prefix}level*
-*▢ ${prefix}rules*
-*▢ ${prefix}profile*
-*▢ ${prefix}waktu*
-*▢ ${prefix}botstat*
-*▢ ${prefix}sewabot*
-*▢ ${prefix}listsewa*
-*▢ ${prefix}owner*
-*▢ ${prefix}ping*
-*▢ ${prefix}runtime*
-*▢ ${prefix}donasi*
-*▢ ${prefix}leaderboard*
-*▢ ${prefix}cekpremium*
-*▢ ${prefix}listpremium*
-*▢ ${prefix}bugreport* [ keluhan ]
+▢ ${prefix}groupmenu
+▢ ${prefix}wibumenu
+▢ ${prefix}stickermenu
+▢ ${prefix}islammenu
+▢️ ${prefix}sertimenu
+▢️ ${prefix}pendidikanmenu
+▢ ${prefix}ceritamenu
+▢️ ${prefix}makermenu
+▢️ ${prefix}dewasamenu
+▢ ${prefix}ownermenu
+▢️ ${prefix}gamemenu
+▢ ${prefix}funmenu
+▢ ${prefix}downloadmenu
+▢️ ${prefix}infomenu
+▢️ ${prefix}othermenu
+▢️ ${prefix}toolsmenu
+▢️ ${prefix}topupmenu
 
-𝖦𝖱𝖴𝖯 𝖬𝖤𝖭𝖴
-*▢ ${prefix}groupsetting*
-*▢ ${prefix}getbio* _reply_
-*▢ ${prefix}afk* _alasan_
-*▢ ${prefix}kontak* _nomor|nama_
-*▢ ${prefix}ban*
-*▢ ${prefix}unban*
-*▢ ${prefix}ceksewa*
-*▢ ${prefix}kickall*
-*▢ ${prefix}infogrup*
-*▢ ${prefix}promote*
-*▢ ${prefix}promoteall*
-*▢ ${prefix}demote*
-*▢ ${prefix}demoteall*
-*▢ ${prefix}listonline*
-*▢ ${prefix}tagall* _teks_
-*▢ ${prefix}leave*
-*▢ ${prefix}kick* _reply_
-*▢ ${prefix}add* _628xxx_
-*▢ ${prefix}setnamegc*
-*▢ ${prefix}setppgc*
-*▢ ${prefix}getpp*
-*▢ ${prefix}setdeskgc*
-*▢ ${prefix}sider* _reply chat bot_
-*▢ ${prefix}hidetag* _teks/reply teks_
-*▢ ${prefix}linkgc*
-*▢ ${prefix}getdeskgc*
-*▢ ${prefix}absen*
-*▢ ${prefix}absensi*
-
-𝖦𝖠𝖬𝖤 𝖬𝖤𝖭𝖴 
-*▢ ${prefix}limitgame*
-*▢ ${prefix}slot*
-*▢ ${prefix}gelud* _@tag_
-*▢ ${prefix}tictactoe* _@tag_
-*▢ ${prefix}siapaaku*
-*▢ ${prefix}kuismath*
-*▢ ${prefix}asahotak*
-*▢ ${prefix}tebaklirik*
-*▢ ${prefix}tebaklagu*
-*▢ ${prefix}tebakkata*
-*▢ ${prefix}susunkata*
-*▢ ${prefix}kimiakuis*
-*▢ ${prefix}caklontong*
-*▢ ${prefix}tebakjenaka*
-*▢ ${prefix}tebakanime*
-*▢ ${prefix}tebaktebakan*
-*▢ ${prefix}tebakgambar*
-*▢ ${prefix}tebakumur*
-*▢ ${prefix}tebakbendera*
-*▢ ${prefix}suit* _batu/kertas/gunting_
-
-𝖨𝖲𝖫𝖠𝖬 𝖬𝖤𝖭𝖴
-*▢ ${prefix}kisahnabi*
-*▢ ${prefix}jadwalsholat*
-*▢ ${prefix}alquran*
-*▢ ${prefix}asmaulhusna*
-*▢ ${prefix}alquranaudio*
-*▢ ${prefix}listsurah*
-
-𝖣𝖮𝖶𝖭𝖫𝖮𝖠𝖣 𝖬𝖤𝖭𝖴 
-*▢ ${prefix}lk21*
-*▢ ${prefix}fbdl*
-*▢ ${prefix}igdl*
-*▢ ${prefix}igdl2*
-*▢ ${prefix}twitter*
-*▢ ${prefix}tiktok*
-*▢ ${prefix}play*
-*▢ ${prefix}ythd*
-*▢ ${prefix}ytmp3*
-*▢ ${prefix}ytmp4*
-*▢ ${prefix}soundcloud*
-*▢ ${prefix}tiktoknowm*
-*▢ ${prefix}tiktokaudio*
-*▢ ${prefix}mediafire*
-*▢ ${prefix}nhentaipdf* _code_
-
-𝖬𝖠𝖪𝖤𝖱 𝖬𝖤𝖭𝖴 
-*▢ ${prefix}tahta* _teks_
-*▢ ${prefix}cup* _teks_
-*▢ ${prefix}cup1* _teks_
-*▢ ${prefix}coffe* _teks_
-
-𝖲𝖤𝖱𝖳𝖨𝖥𝖨𝖪𝖠𝖳 𝖬𝖤𝖭𝖴
-*▢ ${prefix}sertitolol* _teks_
-
-𝖲𝖳𝖨𝖪𝖤𝖱 𝖬𝖤𝖭𝖴 
-*▢ ${prefix}attp* _teks_
-*▢ ${prefix}ttp* _teks_
-*▢ ${prefix}dadu*
-*▢ ${prefix}doge*
-*▢ ${prefix}patrick*
-*▢ ${prefix}gura*
-*▢ ${prefix}stickeranime*
-*▢ ${prefix}semoji* _emoji_
-*▢ ${prefix}sticker* _reply foto/video_
-*▢ ${prefix}smeme* _teks|teks_
-*▢️ ${prefix}swm* _pack|author_
-*▢️ ${prefix}take* _pack|author_
-
-𝖳𝖮𝖮𝖫𝖲 𝖬𝖤𝖭𝖴 
-*▢ ${prefix}toimg*
-*▢ ${prefix}tovideo*
-*▢ ${prefix}tomp3*
-*▢ ${prefix}spamcall*
-
-𝖣𝖤𝖶𝖠𝖲𝖠 𝖬𝖤𝖭𝖴 
-*▢ ${prefix}xnxx* _link_
-*▢ ${prefix}xnxxsearch*
-*▢ ${prefix}asupan*
-
-𝖯𝖤𝖭𝖣𝖨𝖣𝖨𝖪𝖠𝖭 𝖬𝖤𝖭𝖴 
-*▢ ${prefix}nulis*
-*▢ ${prefix}wikipedia*
-*▢ ${prefix}brainly*
-*▢ ${prefix}translate*
-*▢ ${prefix}covidindo*
-*▢ ${prefix}covidglobal*
-
-𝖲𝖳𝖠𝖫𝖪𝖨𝖭𝖦 𝖬𝖤𝖭𝖴 
-*▢ ${prefix}igstalk*
-*▢ ${prefix}tiktokstalk*
-*▢ ${prefix}githubstalk*
-
-𝖠𝖣𝖣 𝖬𝖤𝖭𝖴 
-*▢ ${prefix}addvn*
-*▢ ${prefix}listvn*
-*▢ ${prefix}getvn*
-*▢ ${prefix}addimg*
-*▢ ${prefix}listimg*
-*▢ ${prefix}getimg*
-*▢ ${prefix}addvid*
-*▢ ${prefix}listvid*
-*▢ ${prefix}getvid*
-*▢ ${prefix}addstik*
-*▢ ${prefix}liststik*
-*▢ ${prefix}getstik*
-*▢ ${prefix}addcmd*
-*▢ ${prefix}listcmd*
-*▢ ${prefix}delcmd*
-
-𝖶𝖨𝖡𝖴 𝖬𝖤𝖭𝖴
-*▢ ${prefix}genshin* 
-*▢ ${prefix}loli*
-*▢ ${prefix}manga*
-*▢ ${prefix}anime*
-*▢️ ${prefix}lolivideo*
-*▢ ${prefix}husbu*
-*▢️ ${prefix}waifu*
-*▢️ ${prefix}milf*
-*▢ ${prefix}neko*
-*▢️ ${prefix}kanna*
-*▢ ${prefix}sagiri*
-*▢ ${prefix}hentai*
-*▢ ${prefix}cosplay*
-*▢️ ${prefix}wallnime*
-*▢️ ${prefix}kusonime*
-*▢️ ${prefix}megumin*
-*▢️ ${prefix}storyanime*
-*▢️ ${prefix}otakuongoing*
-*▢️ ${prefix}nekopoi _link_*
-*▢ ${prefix}nekopoisearch*
-
-𝖮𝖳𝖧𝖤𝖱 𝖬𝖤𝖭𝖴 
-*▢ ${prefix}tourl*
-*▢ ${prefix}tinyurl*
-*▢ ${prefix}bilangangka*
-*▢ ${prefix}artimimpi*
-*▢ ${prefix}resepmasakan*
-
-BOT MENU
-*▢ ${prefix}rapli*
-*▢ ${prefix}assalamualaikum*
-*▢ ${prefix}akuganteng*
-*▢ ${prefix}amv*
-*▢ ${prefix}randomvn*
-*▢ ${prefix}araara*
-*▢ ${prefix}araara*
-
-𝖮𝖶𝖭𝖤𝖱 𝖬𝖤𝖭𝖴 
-*▢️ ${prefix}bc* _teks_
-*▢ ${prefix}tobc* _audio_
-*▢ ${prefix}term*
-*▢ ${prefix}eval*
-*▢ ${prefix}clearall*
-*▢ ${prefix}leaveall*
-*▢ ${prefix}join* _teks_
-*▢️ ${prefix}shutdown*
-*▢ ${prefix}getquoted*
-*▢ ${prefix}addupdate* _fiturnya_
-*▢️ ${prefix}exif* _nama|author_
-*▢ ${prefix}sewa add/del* _waktunya_
-*▢️ ${prefix}premium add* _@tag|nomor_
-*▢ ${prefix}premium del* _@tag|nomor_
-*▢ ${prefix}setpp*
-*▢ ${prefix}setbio*
-*▢ ${prefix}setname*
-*▢ ${prefix}getpp*
-*▢ ${prefix}sharelock*
-*▢ ${prefix}chat* _nomor|teks_
-
-𝖲𝖤𝖠𝖱𝖢𝖧𝖨𝖭𝖦 𝖬𝖤𝖭𝖴
-*▢ ${prefix}nekopoisearch* _query_
-*▢ ${prefix}ytsearch* _query_
-*▢ ${prefix}shopee* _product_
-*▢ ${prefix}playstore* _query_
-*▢ ${prefix}ssweb* _query_
-*▢ ${prefix}google* _query_
-*▢ ${prefix}image* _query_
-*▢ ${prefix}pinterest* _query_
-
-𝖥𝖴𝖭 𝖬𝖤𝖭𝖴 
-*▢ ${prefix}mining*
-*▢ ${prefix}cekwatak*
-*▢ ${prefix}cekmati* _nama_
-*▢ ${prefix}wangy* _nama_
-*▢ ${prefix}citacita*
-*▢ ${prefix}toxic*
-*▢ ${prefix}truth*
-*▢ ${prefix}dare*
-*▢ ${prefix}apakah*
-*▢ ${prefix}bisakah*
-*▢ ${prefix}kapankah*
-*▢ ${prefix}rate*
-*▢ ${prefix}jadian*
-*▢ ${prefix}cantik*
-*▢ ${prefix}ganteng*
-*▢ ${prefix}beban*
-*▢ ${prefix}babi*
-*▢ ${prefix}cekganteng*
-*▢ ${prefix}cekcantik*
+Note:
+Jika ada bug, silahkan ketik 
+${prefix}bugreport [keluhan]
 `
                buttons = [{buttonId: `${prefix}command`,buttonText:{displayText: '𝗔𝗟𝗟 𝗠𝗘𝗡𝗨'},type:1},{buttonId: `${prefix}rules`,buttonText:{displayText: '𝗥𝗨𝗟𝗘𝗦'},type:1},{buttonId:`${prefix}store`,buttonText:{displayText:'𝗧𝗢𝗣𝗨𝗣'},type:1}]
 
@@ -1131,8 +901,8 @@ BOT MENU
                 break
         case 'command':
                list = []
-               listmenu = [`groupmenu`,`wibumenu`,`stickermenu`,`islammenu`,`sertimenu`,`ceritamenu`,`makermenu`,`dewasamenu`,`ownermenu`,`gamemenu`,`funmenu`,`downloadmenu`,`infomenu`,`othermenu`,`toolsmenu`]
-               listmenuu = [`Menu Group`,`Wibu Menu`,`Sticker Menu`,`Islam Menu`,`Sertifikat Menu`,`Cerita Menu`,`Maker Menu`,`Dewasa Menu`,`Owner Menu`,`Game Menu`,`Fun Menu`,`Downloader`,`Info Menu`,`Other Tools`,`Tools Menu`]
+               listmenu = [`groupmenu`,`wibumenu`,`stickermenu`,`islammenu`,`sertimenu`,`ceritamenu`,`makermenu`,`dewasamenu`,`ownermenu`,`gamemenu`,`funmenu`,`downloadmenu`,`infomenu`,`othermenu`,`toolsmenu`,`topupmenu`]
+               listmenuu = [`Menu Group`,`Wibu Menu`,`Sticker Menu`,`Islam Menu`,`Sertifikat Menu`,`Cerita Menu`,`Maker Menu`,`Dewasa Menu`,`Owner Menu`,`Game Menu`,`Fun Menu`,`Downloader`,`Info Menu`,`Other Tools`,`Tools Menu`,`Topup Menu`]
                nombor = 1
                startnum = 0
                for (let x of listmenu) {
@@ -1995,8 +1765,6 @@ wa.me/6285282609948`
              .then((data) => { sendMediaURL(from, data.result, mek) })
              .catch((err) => { reply(String(err)) })
               break
-       case 'image':
-       case 'gimage':
        case 'googleimage':
               if (args.length < 1) return reply('Apa Yang Mau Dicari?')
               reply(mess.wait)
@@ -2597,6 +2365,16 @@ break
               getBuffer(`https://api.lolhuman.xyz/api/random/cosplay?apikey=${setting.lolkey}`).then((gambar) => {
               dha.sendMessage(from, gambar, image, { quoted: mek })
 })
+break
+       case 'ppcouple':
+              getBuffer(`https://api.lolhuman.xyz/api/random/ppcouple?apikey=${setting.lolkey}`).then((gambar) => {
+              dha.sendMessage(from, gambar, image, { quoted: mek })
+}) 
+break
+       case 'wallnime':
+              getBuffer(`https://api.lolhuman.xyz/api/random/wallnime?apikey=${setting.lolkey}`).then((gambar) => {
+              dha.sendMessage(from, gambar, image, { quoted: mek })
+}) 
 break
        case 'wallml':
               if (!isRegister) return reply(`You are not verified\n\nReply this chat and send bot password\n\nHint : \nPassword contains 4 digit number\nCheck password at: https://dha-chan02.github.io`)
@@ -3481,6 +3259,38 @@ break
                     }
                     reply(ini_txt)
                     break 
+        case 'xhamstersearch':
+                    if (args.length == 0) return reply(`Example: ${prefix + command} Japanese`)
+                    query = args.join(" ")
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/xhamstersearch?apikey=rccstore&query=${query}`)
+                    get_result = get_result.result
+                    ini_txt = ""
+                    for (var x of get_result) {
+                        ini_txt += `Title : ${x.title}\n`
+                        ini_txt += `Views : ${x.views}\n`
+                        ini_txt += `Duration : ${x.duration}\n`
+                        ini_txt += `Uploader : ${x.uploader}\n`
+                        ini_txt += `Link : ${x.link}\n`
+                        ini_txt += `Thumbnail : ${x.thumbnail}\n\n`
+                    }
+                    reply(ini_txt)
+                    break
+        case 'pornhubsearch':
+                    if (args.length == 0) return reply(`Example: ${prefix + command} Japanese`)
+                    query = args.join(" ")
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/pornhubsearch?apikey=rccstore&query=${query}`)
+                    get_result = get_result.result
+                    ini_txt = ""
+                    for (var x of get_result) {
+                        ini_txt += `Title : ${x.title}\n`
+                        ini_txt += `Views : ${x.views}\n`
+                        ini_txt += `Duration : ${x.duration}\n`
+                        ini_txt += `Uploader : ${x.uploader}\n`
+                        ini_txt += `Link : ${x.link}\n`
+                        ini_txt += `Thumbnail : ${x.thumbnail}\n\n`
+                    }
+                    reply(ini_txt)
+                    break 
 case 'asupan1':
 			dha.updatePresence(from, Presence.composing) 
 				reply(mess.wait)
@@ -3500,7 +3310,17 @@ case 'asupan2':
 				randKey = jsonData[randIndex];
 				asupan = await getBuffer(randKey.result)
 				dha.sendMessage(from, asupan, video, {quoted: mek, caption: '```ASUPAN NIH:V```'})
-				break 				                                 
+				break
+       case 'memeindo':
+              getBuffer(`https://api.lolhuman.xyz/api/meme/memeindo?apikey=${setting.lolkey}`).then((gambar) => {
+              dha.sendMessage(from, gambar, image, { quoted: mek })
+}) 
+break
+       case 'darkjoke':
+              getBuffer(`https://api.lolhuman.xyz/api/meme/darkjoke?apikey=${setting.lolkey}`).then((gambar) => {
+              dha.sendMessage(from, gambar, image, { quoted: mek })
+}) 
+break		                                 
 //------------------<WAR MENU>---------------    
  case 'pvp':
 if (!mek.key.fromMe && !isOwner) return
@@ -4373,14 +4193,9 @@ break
        case 'dare':
               const dare =['Kirim pesan ke mantan kamu dan bilang "aku masih suka sama kamu','telfon crush/pacar sekarang dan ss ke pemain','pap ke salah satu anggota grup','Bilang "KAMU CANTIK BANGET NGGAK BOHONG" ke cowo','ss recent call whatsapp','drop emot "??💨" setiap ngetik di gc/pc selama 1 hari','kirim voice note bilang can i call u baby?','drop kutipan lagu/quote, terus tag member yang cocok buat kutipan itu','pake foto sule sampe 3 hari','ketik pake bahasa daerah 24 jam','ganti nama menjadi "gue anak lucinta luna" selama 5 jam','chat ke kontak wa urutan sesuai %batre kamu, terus bilang ke dia "i lucky to hv you','prank chat mantan dan bilang " i love u, pgn balikan','record voice baca surah al-kautsar','bilang "i hv crush on you, mau jadi pacarku gak?" ke lawan jenis yang terakhir bgt kamu chat (serah di wa/tele), tunggu dia bales, kalo udah ss drop ke sini','sebutkan tipe pacar mu!','snap/post foto pacar/crush','teriak gajelas lalu kirim pake vn kesini','pap mukamu lalu kirim ke salah satu temanmu','kirim fotomu dengan caption, aku anak pungut','teriak pake kata kasar sambil vn trus kirim kesini','teriak " anjimm gabutt anjimmm " di depan rumah mu','ganti nama jadi " BOWO " selama 24 jam','Pura pura kerasukan, contoh : kerasukan maung, kerasukan belalang, kerasukan kulkas, dll']
               const der = dare[Math.floor(Math.random() * dare.length)]
-              buff = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
-              buttons = [{buttonId: `${prefix + command}`,buttonText:{displayText: `➡️Next`},type:1}]
-              imageMsg = (await rimuru.prepareMessageMedia(buff, "imageMessage", { thumbnail: buff, })).imageMessage
-              buttonsMessage = {footerText:'Jangan lupa donasi ya', imageMessage: imageMsg,
-              contentText:'*Dare*\n\n'+ der,buttons,headerType:4}
-              prep = await rimuru.prepareMessageFromContent(from,{buttonsMessage},{quoted: mek })
-              dha.relayWAMessage(prep)
-               break		
+              buffer = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
+              dha.sendMessage(from, buffer, image, { quoted: mek, caption: '*Dare*\n\n'+ der })
+              break		
        case 'jadian':
               jds = []
               jdii = groupMembers
@@ -4628,10 +4443,46 @@ case 'asmaulhusna':
                     break                                         
 //------------------< serti menu >-------------------   
 case 'sertitolol': 				
-				if (args.length < 1) return reply(`Textnya Mana Cuy?\n*Contoh ${prefix}tololserti KURR GAMTENG`)
+				if (args.length < 1) return reply(`Textnya Mana Cuy?\n*Contoh ${prefix}tololserti RAPLI GANTENG`)
 				ct = body.slice(12)
 				zhain = await getBuffer(`https://api.lolhuman.xyz/api/toloserti?apikey=${setting.lolkey}&name=${ct}`)
-				dha.sendMessage(from, zhain, image, { quoted: mek, caption: 'Nih Dah Jadi' })
+				dha.sendMessage(from, zhain, image, { quoted: mek, caption: 'Selesai..' })
+				break
+case 'fuckboy': 				
+				if (args.length < 1) return reply(`Textnya Mana Cuy?\n*Contoh ${prefix}fuckboy RAPLI GANTENG`)
+				ct = body.slice(12)
+				zhain = await getBuffer(`https://api.lolhuman.xyz/api/fuckboy?apikey=${setting.lolkey}&name=${ct}`)
+				dha.sendMessage(from, zhain, image, { quoted: mek, caption: 'Selesai..' })
+				break
+case 'fuckgirl': 				
+				if (args.length < 1) return reply(`Textnya Mana Cuy?\n*Contoh ${prefix}fuckgirl RAPLI GANTENG`)
+				ct = body.slice(12)
+				zhain = await getBuffer(`https://api.lolhuman.xyz/api/fuckgirl?apikey=${setting.lolkey}&name=${ct}`)
+				dha.sendMessage(from, zhain, image, { quoted: mek, caption: 'Selesai..' })
+				break
+case 'badboy': 				
+				if (args.length < 1) return reply(`Textnya Mana Cuy?\n*Contoh ${prefix}badboy RAPLI GANTENG`)
+				ct = body.slice(12)
+				zhain = await getBuffer(`https://api.lolhuman.xyz/api/badboy?apikey=${setting.lolkey}&name=${ct}`)
+				dha.sendMessage(from, zhain, image, { quoted: mek, caption: 'Selesai..' })
+				break
+case 'badgirl': 				
+				if (args.length < 1) return reply(`Textnya Mana Cuy?\n*Contoh ${prefix}badgirl RAPLI GANTENG`)
+				ct = body.slice(12)
+				zhain = await getBuffer(`https://api.lolhuman.xyz/api/badgirl?apikey=${setting.lolkey}&name=${ct}`)
+				dha.sendMessage(from, zhain, image, { quoted: mek, caption: 'Selesai..' })
+				break
+case 'goodboy': 				
+				if (args.length < 1) return reply(`Textnya Mana Cuy?\n*Contoh ${prefix}goodboy RAPLI GANTENG`)
+				ct = body.slice(12)
+				zhain = await getBuffer(`https://api.lolhuman.xyz/api/goodboy?apikey=${setting.lolkey}&name=${ct}`)
+				dha.sendMessage(from, zhain, image, { quoted: mek, caption: 'Selesai..' })
+				break
+case 'goodgirl': 				
+				if (args.length < 1) return reply(`Textnya Mana Cuy?\n*Contoh ${prefix}goodgirl RAPLI GANTENG`)
+				ct = body.slice(12)
+				zhain = await getBuffer(`https://api.lolhuman.xyz/api/goodgirl?apikey=${setting.lolkey}&name=${ct}`)
+				dha.sendMessage(from, zhain, image, { quoted: mek, caption: 'Selesai..' })
 				break
 //------------------< cerita menu >-------------------
 case 'cerpen':
@@ -4673,9 +4524,6 @@ case 'quotesdilan':
                     quotedilan = await fetchJson(`https://api.lolhuman.xyz/api/quotes/dilan?apikey=${setting.lolkey}`)
                     reply(quotedilan.result)
                     break   
-               case 'faktaunik':
-                case 'katabijak':
-                case 'pantun':
                 case 'bucin':
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/random/${command}?apikey=${setting.lolkey}`)
                     reply(get_result.result)
@@ -4716,36 +4564,6 @@ case 'coffe':
                         dha.sendMessage(from, gambar, image, { quoted: troli })
                     })
                     break   
-
-                case 'wetglass':
-                case 'multicolor3d':
-                case 'watercolor':
-                case 'luxuryangold':
-                case 'galaxywallpaper':
-                case 'lighttext':
-                case 'beautifulflower':
-                case 'puppycute':
-                case 'royaltext':
-                case 'heartshaped':
-                case 'birthdaycake':
-                case 'galaxystyle':
-                case 'hologram3d':
-                case 'greenneon':
-                case 'glossychrome':
-                case 'greenbush':
-                case 'metallogo':
-                case 'noeltext':
-                case 'glittergold':
-                case 'textcake':
-                case 'starsnight':
-                case 'wooden3d':
-                case 'textbyname':
-                case 'writegalacy':
-                case 'galaxybat':
-                case 'snow3d':
-                case 'birthdayday':
-                case 'goldplaybutton':
-                case 'silverplaybutton':
                 case 'freefire':
                     if (args.length == 0) return reply(`Example: ${prefix + command} LoL Human`)
                     ini_txt = args.join(" ")
@@ -4933,6 +4751,9 @@ case 'coffe':
              break
       case 'funmenu':
              dha.sendMessage(from, funMenu(prefix), MessageType.text, {quoted: troli})
+             break
+      case 'topupmenu':
+             dha.sendMessage(from, topupMenu(prefix), MessageType.text, {quoted: troli})
              break
 
 default:
