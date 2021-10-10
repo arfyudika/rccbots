@@ -868,7 +868,6 @@ dha.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 ▢ ${prefix}stickermenu
 ▢ ${prefix}islammenu
 ▢️ ${prefix}sertimenu
-▢️ ${prefix}pendidikanmenu
 ▢ ${prefix}ceritamenu
 ▢️ ${prefix}makermenu
 ▢️ ${prefix}dewasamenu
