@@ -197,6 +197,7 @@ module.exports = dha = async (dha, mek) => {
 		const isCmd = body.startsWith(prefix) 
 		if (isCmd) cmdadd()
 		const totalhit = JSON.parse(fs.readFileSync('./database/totalcmd.json'))[0].totalcmd
+		const banned = JSON.parse(fs.readFileSync('./src/banned.json'))
         const q = args.join(' ')
 
         const botNumber = dha.user.jid
@@ -204,6 +205,7 @@ module.exports = dha = async (dha, mek) => {
 		const ownerName = setting.ownerName
 		const botName = setting.botName
 		const isGroup = from.endsWith('@g.us')
+		const isBanned = banned.includes(sender)
 		let sender = isGroup ? mek.participant : mek.key.remoteJid
 		let senderr = mek.key.fromMe ? dha.user.jid : mek.key.remoteJid.endsWith('@g.us') ? mek.participant : mek.key.remoteJid
 		const totalchat = await dha.chats.all()
@@ -4247,21 +4249,29 @@ break
               mentions(teks, membr, true)
               break
 //------------------< Lainnya >-------------------
-
-				case 'ban':
-					dha.updatePresence(from, Presence.composing) 
-					if (args.length < 1) return
-					if (!isOwner) return reply(mess.only.owner)
-					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-			        ban = mentioned
-					reply(`berhasil banned : ${ban}`)
-					break
-				case 'unban':
-					if (!isOwner)return reply(mess.only.owner)
-					bnnd = body.slice(8)
-					ban.splice(`${bnnd}@s.whatsapp.net`, 1)
-					reply(`Nomor wa.me/${bnnd} telah di unban!`)
-					break
+			case 'banlist': case 'blocklist': case 'listban': case 'listblock': 
+          teks = '╭────「 *BANNED  LIST* 」\n'
+          for (let hui of banned) {
+            teks += `│+  @${hui.split('@')[0]}\n`
+          }
+          teks += `│+ Total : ${banned.length}\n╰──────「 *RCC BOT* 」────`
+          alpha.sendMessage(from, teks.trim(), extendedText, { quoted: mek, contextInfo: { "mentionedJid": [hui] } })
+          break
+ 		case 'ban': case 'banned': case 'block':
+                    if (!isOwner) return reply(mess.only.owner)
+                    bnnd = `${args[0].replace('@', '')}@s.whatsapp.net`
+					banned.push(bnnd)
+					fs.writeFileSync('./src/banned.json', JSON.stringify(banned))
+					fakestatus(`Nomor ${bnnd} telah dibanned!`)
+          break
+        case 'unban': case 'unbannned': case 'unblock':
+                    if (!isOwner) return reply(mess.only.owner)
+                    ya = `${args[0].replace('@', '')}@s.whatsapp.net`
+					unb = banned.indexOf(ya)
+					ban.splice(unb, 1)
+					fs.writeFileSync('./src/banned.json', JSON.stringify(banned))
+					fakestatus(`Nomor wa.me/${ya} telah di unban!`)
+          break
         case 'getpp':
                if (mek.message.extendedTextMessage === null || mek.message.extendedTextMessage === undefined) {
                linkpp = await dha.getProfilePicture(from) || "https://telegra.ph/file/40151a65238ba2643152d.jpg"
