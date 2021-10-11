@@ -174,6 +174,9 @@ exports.groupMenu = (prefix) => {
 ▢ ${prefix}linkgc
 ▢ ${prefix}absen
 ▢ ${prefix}absensi
+▢ ${prefix}ban
+▢ ${prefix}listban
+▢ ${prefix}unban
 `
 }
 exports.downloadMenu = (prefix) => {
