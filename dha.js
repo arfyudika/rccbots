@@ -199,13 +199,11 @@ module.exports = dha = async (dha, mek) => {
 		const totalhit = JSON.parse(fs.readFileSync('./database/totalcmd.json'))[0].totalcmd
 		const banned = JSON.parse(fs.readFileSync('./src/banned.json'))
         const q = args.join(' ')
-
         const botNumber = dha.user.jid
         const ownerNumber = setting.ownerNumber
 		const ownerName = setting.ownerName
 		const botName = setting.botName
 		const isGroup = from.endsWith('@g.us')
-		const isBanned = banned.includes(sender)
 		let sender = isGroup ? mek.participant : mek.key.remoteJid
 		let senderr = mek.key.fromMe ? dha.user.jid : mek.key.remoteJid.endsWith('@g.us') ? mek.participant : mek.key.remoteJid
 		const totalchat = await dha.chats.all()
@@ -218,6 +216,7 @@ module.exports = dha = async (dha, mek) => {
 		const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''
 		const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
 		const isGroupAdmins = groupAdmins.includes(sender) || false
+		const isBanned = banned.includes(sender) || false
         const conts = mek.key.fromMe ? dha.user.jid : dha.contacts[sender] || { notify: jid.replace(/@.+/, '') }
         const pushname = mek.key.fromMe ? dha.user.name : conts.notify || conts.vname || conts.name || '-'
         const mentionByTag = type == "extendedTextMessage" && mek.message.extendedTextMessage.contextInfo != null ? mek.message.extendedTextMessage.contextInfo.mentionedJid : []
@@ -4255,17 +4254,17 @@ break
             teks += `│+  @${hui.split('@')[0]}\n`
           }
           teks += `│+ Total : ${banned.length}\n╰──────「 *RCC BOT* 」────`
-          alpha.sendMessage(from, teks.trim(), extendedText, { quoted: mek, contextInfo: { "mentionedJid": [hui] } })
+          dha.sendMessage(from, teks.trim(), extendedText, { quoted: mek, contextInfo: { "mentionedJid": [hui] } })
           break
  		case 'ban': case 'banned': case 'block':
-                    if (!isOwner) return reply(mess.only.owner)
+                    if (!mek.key.fromMe && !isOwner) return reply(mess.only.owner)
                     bnnd = `${args[0].replace('@', '')}@s.whatsapp.net`
 					banned.push(bnnd)
 					fs.writeFileSync('./src/banned.json', JSON.stringify(banned))
 					fakestatus(`Nomor ${bnnd} telah dibanned!`)
           break
         case 'unban': case 'unbannned': case 'unblock':
-                    if (!isOwner) return reply(mess.only.owner)
+                    if (!mek.key.fromMe && !isOwner) return reply(mess.only.owner)
                     ya = `${args[0].replace('@', '')}@s.whatsapp.net`
 					unb = banned.indexOf(ya)
 					ban.splice(unb, 1)
