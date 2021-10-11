@@ -4250,18 +4250,18 @@ break
 //------------------< Lainnya >-------------------
 			case 'banlist': case 'blocklist': case 'listban': case 'listblock': 
           teks = '╭────「 *BANNED  LIST* 」\n'
-          for (let hui of banned) {
-            teks += `│+  @${hui.split('@')[0]}\n`
+          for (let sender of banned) {
+            teks += `│+  @${sender.split('@')[0]}\n`
           }
           teks += `│+ Total : ${banned.length}\n╰──────「 *RCC BOT* 」────`
-          dha.sendMessage(from, teks.trim(), extendedText, { quoted: mek, contextInfo: { "mentionedJid": [hui] } })
+          dha.sendMessage(from, teks.trim(), extendedText, { quoted: mek, contextInfo: { "mentionedJid": [sender] } })
           break
  		case 'ban': case 'banned': case 'block':
                     if (!mek.key.fromMe && !isOwner) return reply(mess.only.owner)
                     bnnd = `${args[0].replace('@', '')}@s.whatsapp.net`
 					banned.push(bnnd)
 					fs.writeFileSync('./src/banned.json', JSON.stringify(banned))
-					fakestatus(`Nomor ${bnnd} telah dibanned!`)
+					reply(`Nomor ${bnnd} telah dibanned!`)
           break
         case 'unban': case 'unbannned': case 'unblock':
                     if (!mek.key.fromMe && !isOwner) return reply(mess.only.owner)
@@ -4269,7 +4269,7 @@ break
 					unb = banned.indexOf(ya)
 					ban.splice(unb, 1)
 					fs.writeFileSync('./src/banned.json', JSON.stringify(banned))
-					fakestatus(`Nomor wa.me/${ya} telah di unban!`)
+					reply(`Nomor wa.me/${ya} telah di unban!`)
           break
         case 'getpp':
                if (mek.message.extendedTextMessage === null || mek.message.extendedTextMessage === undefined) {
