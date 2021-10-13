@@ -73,7 +73,6 @@ exports.otherMenu = (prefix) => {
 ▢ ${prefix}tiktokstalk *ussername*
 ▢ ${prefix}img2url *reply foto*
 ▢ ${prefix}ytsearch *query*
-▢ ${prefix}drakorongoing
 ▢ ${prefix}nulis
 ▢ ${prefix}wikipedia
 ▢ ${prefix}brainly
