@@ -186,6 +186,7 @@ exports.downloadMenu = (prefix) => {
 *────❲ DOWNLOADER ❳────*
 
 ▢ ${prefix}lk21 *query*
+▢ ${prefix}drakorongoing
 ▢ ${prefix}fbdl 
 ▢ ${prefix}igdl 
 ▢ ${prefix}igdl2 
