@@ -1712,20 +1712,6 @@ wa.me/6285282609948`
                     thumbnail = await getBuffer(get_result.thumbnail)
                     await dha.sendMessage(from, thumbnail, image, { quoted: mek, caption: ini_txt })
                     break
-       case 'drakorongoing'
-             anu = await fetchJson(`https://api.lolhuman.xyz/api/drakorongoing?apikey=${setting.lolkey}`)
-             anu = anu.result
-             ini_txt = "Ongoing Drakor\n\n"
-             for (var x of drakor) {
-             ini_txt += `Title : ${x.title}\n`
-             ini_txt += `Link : ${x.link}\n`
-             ini_txt += `Thumbnail : ${x.thumbnail}\n`
-             ini_txt += `Year : ${x.category}\n`
-             ini_txt += `Total Episode : ${x.total_episode}\n`
-             ini_txt += `Genre : ${x.genre.join(", ")}\n\n`
-             }
-             reply(ini_txt)
-             break
        case 'igdl':
        case 'instagram':
               try {
