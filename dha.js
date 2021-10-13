@@ -864,26 +864,26 @@ dha.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 
    ━━━━━ 𝗟𝗜𝗦𝗧 𝗠𝗘𝗡𝗨 ━━━━━
 
-▢ ${prefix}groupmenu
-▢ ${prefix}wibumenu
-▢ ${prefix}stickermenu
-▢ ${prefix}islammenu
-▢️ ${prefix}sertimenu
-▢ ${prefix}ceritamenu
-▢️ ${prefix}makermenu
-▢️ ${prefix}dewasamenu
-▢ ${prefix}ownermenu
-▢️ ${prefix}gamemenu
-▢ ${prefix}funmenu
-▢ ${prefix}downloadmenu
-▢️ ${prefix}infomenu
-▢️ ${prefix}othermenu
-▢️ ${prefix}toolsmenu
-▢️ ${prefix}topupmenu
+*▢ ${prefix}groupmenu*
+*▢ ${prefix}wibumenu*
+*▢ ${prefix}stickermenu*
+*▢ ${prefix}islammenu*
+*▢️ ${prefix}sertimenu*
+*▢ ${prefix}ceritamenu*
+*▢️ ${prefix}makermenu*
+*▢️ ${prefix}dewasamenu*
+*▢ ${prefix}ownermenu*
+*▢️ ${prefix}gamemenu*
+*▢ ${prefix}funmenu*
+*▢ ${prefix}downloadmenu*
+*▢️ ${prefix}infomenu
+*▢️ ${prefix}othermenu*
+*▢️ ${prefix}toolsmenu*
+*▢️ ${prefix}topupmenu*
 
 Note:
 Jika ada bug, silahkan ketik 
-${prefix}bugreport [keluhan]
+${prefix}bugreport
 `
                buttons = [{buttonId: `${prefix}command`,buttonText:{displayText: '𝗔𝗟𝗟 𝗠𝗘𝗡𝗨'},type:1},{buttonId: `${prefix}rules`,buttonText:{displayText: '𝗥𝗨𝗟𝗘𝗦'},type:1},{buttonId:`${prefix}store`,buttonText:{displayText:'𝗧𝗢𝗣𝗨𝗣'},type:1}]
 
@@ -926,7 +926,7 @@ ${prefix}bugreport [keluhan]
                nombor = 1
                startnum = 0
                for (let x of listmenu) {
-               const yy = {title: 'List Harga' + nombor++,
+               const yy = {title: 'List Harga ' + nombor++,
                     rows: [
                        {
                         title: `${listmenuu[startnum++]}`,
