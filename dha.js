@@ -1713,8 +1713,8 @@ wa.me/6285282609948`
                     await dha.sendMessage(from, thumbnail, image, { quoted: mek, caption: ini_txt })
                     break
        case 'drakorongoing'
-             drakor = await fetchJson(`https://api.lolhuman.xyz/api/drakorongoing?apikey=${setting.lolkey}`)
-             get_result = drakor.result
+             anu = await fetchJson(`https://api.lolhuman.xyz/api/drakorongoing?apikey=${setting.lolkey}`)
+             anu = anu.result
              ini_txt = "Ongoing Drakor\n\n"
              for (var x of drakor) {
              ini_txt += `Title : ${x.title}\n`
