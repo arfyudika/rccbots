@@ -16,15 +16,13 @@ nocache('../message/group.js', module => console.log(color('[WATCH]', 'yellow'),
 
 const starts = async (dha = new WAConnection()) => {
 	dha.logger.level = 'warn'
-	console.log(color(figlet.textSync('BOT Rp 10.000', {
+	console.log(color(figlet.textSync('RCC BOT', {
 		font: 'Standard',
 		horizontalLayout: 'default',
 		vertivalLayout: 'default',
 		width: 80,
 		whitespaceBreak: false
 	}), 'cyan'))
-	console.log(color('[SOURCE CODE BY GITHUB ARFYUDIKA]\n\n', 'orange'), color('\n======THANKS TO======\n•KURRXD\n•YUDHA PERDANA\n•SELURUH CREATOR BOT\n•SELURUH BUYER SCRIPT INI', 'yellow'))
-	console.log(color('\n\nNOT FOR SELL COMERSIL\nKALAU ADA YG MINTA SURUH CHAT ARFYUDIKA\nWA 6285282609948', 'pink'))
 	dha.browserDescription = ["RCC STORE", "Chrome", "3.0.0"];
 
 	// Menunggu QR
@@ -35,7 +33,7 @@ const starts = async (dha = new WAConnection()) => {
 	// Menghubungkan
 	fs.existsSync(`./${setting.sessionName}.json`) && dha.loadAuthInfo(`./${setting.sessionName}.json`)
 	dha.on('connecting', () => {
-		console.log(color('[ ARFYUDIKA ]', 'purple'), color('GENERATE QR CODE'));
+		console.log(color('[ ARFYUDIKA ]', 'purple'), color('WAITING FOR ACTIVE'));
 	})
 const spinner = { 
   "interval": 120,
@@ -53,7 +51,7 @@ const spinner = {
 
 	//connect
 	dha.on('open', () => {
-		console.log(color('[ ARFYUDIKA ]', 'purple'), color('BOT AKTIF, SILAHKAN MENIKMATI'));
+		console.log(color('[ ARFYUDIKA ]', 'purple'), color('BOT ACTIVE!'));
 	})
 
 	// session
