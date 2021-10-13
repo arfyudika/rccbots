@@ -1,14 +1,14 @@
-# RCC BOT
-
-Simple WhatsApp Bot
-
-## FOR DEPLOY HEROKU USER
-
-
-<p><a href="https://heroku.com/deploy?template=https://github.com/Rafli2305/rccbots"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
+<p align="center">
+	<img src="https://i.ibb.co/Zx43M5k/perdana.png" width="35%" style="margin-left: auto;margin-right: auto;display: block;">
+</p>
+<h1 align="center">RCC BOT</h1>
 
 
-## FOR TERMUX USER
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Rafli2305/rccbots)
+
+[![Grup WhatsApp](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/JkhwGzx8AzNCYWWAnV0QGv)
+
+## UNTUK USER TERMUX
 
 ```
 > pkg update && pkg upgrade
@@ -24,7 +24,7 @@ Simple WhatsApp Bot
 
 ---------
 
-## FOR WINDOWS/VPS/RDP USER
+## UNTUK USER WINDOWS/VPS/RDP
 
 * Download And Install Git [`Click Here`](https://git-scm.com/downloads)
 * Download And Install NodeJS [`Click Here`](https://nodejs.org/en/download)
