@@ -107,6 +107,7 @@ exports.wibuMenu = (prefix) => {
 ▢ ${prefix}ppcouple
 ▢ ${prefix}loli
 ▢ ${prefix}manga
+▢ ${prefix}gura
 ▢ ${prefix}anime 
 ▢️ ${prefix}lolivideo
 ▢ ${prefix}husbu
@@ -326,11 +327,9 @@ return`
 ▢ ${prefix}pornhubsearch
 ▢ ${prefix}xhamstersearch
 ▢ ${prefix}asupan
-▢ ${prefix}asupan1
-▢ ${prefix}asupan2
 
 NOTE:
-*Feature* ini hanya untuk umur 18+
+Feature ini hanya untuk umur 18+
 `}
 exports.toolsMenu = (prefix) => {
 return`
@@ -348,8 +347,6 @@ return`
 ▢ ${prefix}addstik
 ▢ ${prefix}liststik
 ▢ ${prefix}getstik
-▢ ${prefix}tupai
-
 `}
 exports.topupMenu = (prefix) => {
     return `
@@ -362,8 +359,7 @@ exports.topupMenu = (prefix) => {
 ▢ ${prefix}gshell
 ▢ ${prefix}hdi
 ▢️ ${prefix}sosis
-`
-}
+`}
 exports.allMenu = (prefix, cmhit, runtime, pushname, isOwner, isPremium, gcount, sender, baterai) => {
     return `P
 
