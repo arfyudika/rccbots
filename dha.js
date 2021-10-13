@@ -2454,7 +2454,7 @@ Source : ${anu.result.source}
 *[Wait] Tunggu Sebentar..*`
 				///////buffer = await getBuffer(anu.result.thumbnail)
 				buffer1 = await getBuffer(anu.result.url_video)
-				dha.sendMessage(from, buffer1, video, {mimetype: 'video/mp4', filename: `${anu.result.video}.mp4`, quoted:freply, caption: 'Nih Gan'})
+				dha.sendMessage(from, buffer1, video, {mimetype: 'video/mp4', filename: `${anu.result.video}.mp4`, quoted:freply, caption: 'Selesai..'})
 					break  
 				case 'play':
               if (!q) return reply('Linknya?')
@@ -4818,7 +4818,7 @@ nuber = parseInt(budy)
 if (isNaN(nuber)) return
 if (nuber < 1 || nuber > 9) return reply('Masukan Angka Dengan Benar')
 main = ky_ttt.filter(hjh => hjh.id.includes(from)) 
-if (!tttawal.includes(main[0].angka[nuber])) return reply('Udah Di Isi, Isi Yang Lain Gan')
+if (!tttawal.includes(main[0].angka[nuber])) return reply('Udah di terisi, silahkan isi yang lain')
 if (main[0].gilir.includes(sender)) return reply('Tunggu Giliran Gan')
 s = '❎'
 main[0].angka[nuber] = s
@@ -4894,7 +4894,7 @@ nuber = parseInt(budy)
 if (isNaN(nuber)) return
 if (nuber < 1 || nuber > 9) return reply('Masukan Angka Dengan Benar')
 main = ky_ttt.filter(hjh => hjh.id.includes(from)) 
-if (!tttawal.includes(main[0].angka[nuber])) return reply('Udah Di Isi, Isi Yang Lain Gan')
+if (!tttawal.includes(main[0].angka[nuber])) return reply('Udah terisi, silahkan isi yang lain')
 if (main[0].gilir.includes(sender)) return reply('Tunggu Giliran Gan')
 s = '⭕'
 main[0].angka[nuber] = s
