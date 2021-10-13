@@ -4170,8 +4170,8 @@ break
               dha.sendMessage(from, '*Pertanyaan :* '+kapankah+'\n*Jawaban :* '+ koh, text, { quoted: mek })
               break
        case 'bucin'
-             anu = await fetchJson(`https://api.lolhuman.xyz/api/random/bucin?apikey=${setting.lolkey}`)
-             reply(anu.result)
+             bcn = await fetchJson(`https://api.lolhuman.xyz/api/random/bucin?apikey=${setting.lolkey}`)
+             await dha.sendMessage(from, bcn, image, { quotes: mek })
              break
        case 'randomnama'
              anu = await fetchJson(`https://api.lolhuman.xyz/api/random/nama?apikey=${setting.lolkey}`)
