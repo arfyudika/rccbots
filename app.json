@@ -8,7 +8,6 @@
     "js-whatsapp"],
   "repository": "https://github.com/Rafli2305",
   "website": "https://chat.whatsapp.com/JkhwGzx8AzNCYWWAnV0QGv",
-},
   "buildpacks": [
     {
       "url": "heroku/nodejs"
