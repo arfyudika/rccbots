@@ -4537,11 +4537,7 @@ case 'ceritahoror':
 case 'quotesdilan':
                     quotedilan = await fetchJson(`https://api.lolhuman.xyz/api/quotes/dilan?apikey=${setting.lolkey}`)
                     reply(quotedilan.result)
-                    break   
-                case 'bucin':
-                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/random/${command}?apikey=${setting.lolkey}`)
-                    reply(get_result.result)
-                    break                                         
+                    break                                       
 //------------------< Maker Menu >--------------------   
 case 'tahta':
          if (args.length == 0) return reply(`Usage: ${prefix} + command} text\nExample: ${prefix + command} DHA`) 
