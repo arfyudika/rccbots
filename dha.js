@@ -1712,6 +1712,20 @@ wa.me/6285282609948`
                     thumbnail = await getBuffer(get_result.thumbnail)
                     await dha.sendMessage(from, thumbnail, image, { quoted: mek, caption: ini_txt })
                     break
+                case 'drakorongoing':
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/drakorongoing?apikey=${setting.lolkey}`)
+                    get_result = get_result.result
+                    ini_txt = "Ongoing Drakor\n\n"
+                    for (var x of get_result) {
+                        ini_txt += `Title : ${x.title}\n`
+                        ini_txt += `Link : ${x.link}\n`
+                        ini_txt += `Thumbnail : ${x.thumbnail}\n`
+                        ini_txt += `Year : ${x.category}\n`
+                        ini_txt += `Total Episode : ${x.total_episode}\n`
+                        ini_txt += `Genre : ${x.genre.join(", ")}\n\n`
+                    }
+                    reply(ini_txt)
+                    break
        case 'igdl':
        case 'instagram':
               try {
@@ -2639,7 +2653,7 @@ a = `\`\`\`▢ Title : ${i.title}\`\`\`
 })
                break
          case 'asupan':            
-                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/asupan?apikey=${apikey}`)
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/asupan?apikey=${setting.lolkey}`)
                     ini_buffer = await getBuffer(get_result.result)
                     await dha.sendMessage(from, ini_buffer, video, { quoted: lol, mimetype: Mimetype.mp4, filename: "asupan.mp4" })
                     break         
