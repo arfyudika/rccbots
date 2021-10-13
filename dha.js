@@ -4183,7 +4183,7 @@ break
               truteh = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
               dha.sendMessage(from, truteh, image, { caption: '*Truth*\n\n'+ ttrth, quoted: mek })
               break
-       case 'pantun'
+       case 'pantun':
              get_result = await fetchJson(`https://api.lolhuman.xyz/api/random/pantun?apikey=${setting.lolkey}`)
              reply(get_result.result)
              break
