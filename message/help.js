@@ -37,6 +37,7 @@ exports.funMenu = (prefix) => {
 ▢ ${prefix}toxic
 ▢ ${prefix}truth
 ▢ ${prefix}dare
+▢ ${prefix}bucin
 ▢ ${prefix}apakah
 ▢ ${prefix}bisakah
 ▢ ${prefix}kapankah
