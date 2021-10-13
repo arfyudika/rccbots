@@ -54,7 +54,7 @@ const { Toxic } = require('./lib/Toxic.js')
 const { cmdadd } = require('./lib/totalcmd.js')
 const { uptotele, uploadFile, RESTfulAPI, uploadImages } = require('./lib/uploadimage')
 const { isGame, gameAdd, givegame, cekGLimit } = require("./lib/limit");
-const { onGoing, dadu, asupan } = require("./lib/otakudesu.js")
+const { onGoing, dadu } = require("./lib/otakudesu.js")
 const { mediafireDl } = require('./lib/mediafire.js')
 const { webp2gifFile, igDownloader, TiktokDownloader } = require("./lib/gif.js")
 const { y2mateA, y2mateV } = require('./lib/y2mate')
@@ -2639,19 +2639,10 @@ a = `\`\`\`▢ Title : ${i.title}\`\`\`
 })
                break
          case 'asupan':            
-               reply(mess.wait)
-               asupan()
-              .then(async (body) => {
-               asupann = body.split('\n')
-               asupan = asupann[Math.floor(Math.random() * asupann.length)]
-               sendMediaURL(from, `https://api.lolhuman.xyz/api/asupan?apikey=${setting.lolkey}')
-               console.log('Success sending video!')
-})
-              .catch(async (err) => {
-               console.log(err)
-               reply(`${err}`)
-})
-               break              
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/asupan?apikey=${apikey}`)
+                    ini_buffer = await getBuffer(get_result.result)
+                    await dha.sendMessage(from, ini_buffer, video, { quoted: lol, mimetype: Mimetype.mp4, filename: "asupan.mp4" })
+                    break         
         case 'nulis':
         case 'tulis':
                if (args.length < 1) return reply('Yang mau di tulis apaan?')
