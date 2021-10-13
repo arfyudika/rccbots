@@ -9,11 +9,6 @@ baterai = 'unknown'
 charging = 'unknown'
 
 //nocache
-require('./dha.js')
-nocache('../dha.js', module => console.log(color('[WATCH]', 'yellow'), color(`'${module}'`, 'cyan'), 'File is updated!'))
-require('./message/group.js')
-nocache('../message/group.js', module => console.log(color('[WATCH]', 'yellow'), color(`'${module}'`, 'yellow'), 'File is updated!'))
-
 const starts = async (dha = new WAConnection()) => {
 	dha.logger.level = 'warn'
 	console.log(color(figlet.textSync('RCC BOT', {
