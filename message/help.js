@@ -49,6 +49,7 @@ exports.funMenu = (prefix) => {
 ▢ ${prefix}babi
 ▢ ${prefix}cekganteng
 ▢ ${prefix}cekcantik
+▢ ${prefix}randomnama
 `
 }
 exports.otherMenu = (prefix) => {
